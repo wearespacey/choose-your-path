@@ -1,22 +1,17 @@
 package com.keusmar.cslabs_hackathon;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
 import com.keusmar.cslabs_hackathon.Data.GameImpactData;
 import com.keusmar.cslabs_hackathon.Data.ReadData;
 import com.keusmar.cslabs_hackathon.Models.Action;
 import com.keusmar.cslabs_hackathon.Models.Answer;
-import com.keusmar.cslabs_hackathon.Models.CaracteristicConstants;
-import com.keusmar.cslabs_hackathon.Models.GameImpact;
-import com.keusmar.cslabs_hackathon.Models.Impact;
 
 import java.util.ArrayList;
 
@@ -35,7 +30,9 @@ public class MainActivity extends AppCompatActivity {
         ReadData readData = new ReadData(this);
         actions = readData.getActions();
         GameImpactData gid = new GameImpactData();
-        mainView = new MainView(this);
+        Intent intent = getIntent();
+
+        mainView = new MainView(this, (Character.CharacterColor)intent.getSerializableExtra(ChooseCharacterActivity.COLOR));
         mainView.setActions(actions);
         MainThread mainThread = new MainThread(mainView, this);
         Thread thread = new Thread(mainThread);
@@ -78,6 +75,8 @@ public class MainActivity extends AppCompatActivity {
     public void nextAction() {
         if (currentPosition < actions.size()-1) {
             currentPosition++;
+            if((currentPosition+1)%4==0)
+                this.mainView.incrementDayNumber();
         }
     }
 }

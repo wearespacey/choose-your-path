@@ -9,10 +9,13 @@ import android.graphics.Paint;
 import android.graphics.Typeface;
 import android.view.View;
 
+import com.keusmar.cslabs_hackathon.Character.CharacterColor;
 import com.keusmar.cslabs_hackathon.Models.Action;
 import com.keusmar.cslabs_hackathon.Models.Impact;
 
 import java.util.ArrayList;
+
+import static com.keusmar.cslabs_hackathon.Character.CharacterColor.*;
 
 
 public class MainView extends View
@@ -27,15 +30,49 @@ public class MainView extends View
     private float ecologyStatus = 100;
     private float economyStatus = 100;
     private float comfortStatus = 100;
+    private Integer day_number = 1;
 
-    public MainView(Context context)
+    public MainView(Context context, CharacterColor color)
     {
         super(context);
-        animations.add(R.drawable.b1);
-        animations.add(R.drawable.b2);
-        animations.add(R.drawable.b3);
-        animations.add(R.drawable.b4);
-        animations.add(R.drawable.b5);
+        switch (color){
+            case ALIEN_BEIGE:
+                animations.add(R.drawable.b1);
+                animations.add(R.drawable.b2);
+                animations.add(R.drawable.b3);
+                animations.add(R.drawable.b4);
+                animations.add(R.drawable.b5);
+            break;
+            case ALIEN_BLUE:
+                animations.add(R.drawable.bu1);
+                animations.add(R.drawable.bu2);
+                animations.add(R.drawable.bu3);
+                animations.add(R.drawable.bu4);
+                animations.add(R.drawable.bu5);
+            break;
+            case ALIEN_PINK:
+                animations.add(R.drawable.r1);
+                animations.add(R.drawable.r2);
+                animations.add(R.drawable.r3);
+                animations.add(R.drawable.r4);
+                animations.add(R.drawable.r5);
+            break;
+            case ALIEN_GREEN:
+                animations.add(R.drawable.g1);
+                animations.add(R.drawable.g2);
+                animations.add(R.drawable.g3);
+                animations.add(R.drawable.g4);
+                animations.add(R.drawable.g5);
+            break;
+            case ALIEN_YELLOW:
+                animations.add(R.drawable.y1);
+                animations.add(R.drawable.y2);
+                animations.add(R.drawable.y3);
+                animations.add(R.drawable.y4);
+                animations.add(R.drawable.y5);
+            break;
+        }
+
         paint = new Paint();
     }
 
@@ -76,11 +113,13 @@ public class MainView extends View
         paint.setTextSize(80);
         canvas.save();
         canvas.rotate(15, x-300, 80);
-        canvas.drawText("#Day 1", x-298, 82, paint);
+        canvas.drawText("#Day " + day_number, x-298, 82, paint);
         paint.setColor(Color.parseColor("#FFD723"));
-        canvas.drawText("#Day 1", x-300, 80, paint);
+        canvas.drawText("#Day " + day_number, x-300, 80, paint);
         canvas.restore();
     }
+
+    public void incrementDayNumber(){day_number++;}
 
     private void drawChoiceBtns(Canvas canvas, int x, int y) {
         Bitmap validate = BitmapFactory.decodeResource(getResources(), R.drawable.validate);
@@ -173,6 +212,7 @@ public class MainView extends View
     }
 
     public void refresh() {
+
         this.rotation+=2;
         scrollingBg++;
         if (scrollingBg % 2 == 0)
@@ -182,6 +222,7 @@ public class MainView extends View
     }
 
     public void updateStatus(Action action, boolean decision) {
+
         for (Impact impact : action.getImpacts()) {
             switch (impact.getCaracteristic()) {
                 case "Ecology":
@@ -196,10 +237,9 @@ public class MainView extends View
                 default:
                     break;
             }
+
             if (economyStatus < 0 || ecologyStatus < 0 || comfortStatus < 0) {
-                ecologyStatus = 100;
-                economyStatus = 100;
-                comfortStatus = 100;
+                // TODO: Go to end screen
             }
         }
         this.invalidate();
