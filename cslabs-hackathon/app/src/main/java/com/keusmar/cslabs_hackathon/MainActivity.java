@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<Action> actions;
     private ArrayList<Answer> answers = new ArrayList<Answer>();
     private TextView questionContainer;
+    private MainView mainView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         ReadData readData = new ReadData(this);
         actions = readData.getActions();
         GameImpactData gid = new GameImpactData();
-        MainView mainView = new MainView(this);
+        mainView = new MainView(this);
         mainView.setActions(actions);
         MainThread mainThread = new MainThread(mainView, this);
         Thread thread = new Thread(mainThread);
@@ -64,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void answerAction(TextView questionContainer, Action action, boolean response){
         answers.add(new Answer(action, response));
+        mainView.updateStatus(action);
         nextAction();
         if(currentPosition < actions.size())
             questionContainer.setText(getCurrentAction().getContent());

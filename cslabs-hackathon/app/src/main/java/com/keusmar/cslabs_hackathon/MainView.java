@@ -10,6 +10,7 @@ import android.graphics.Typeface;
 import android.view.View;
 
 import com.keusmar.cslabs_hackathon.Models.Action;
+import com.keusmar.cslabs_hackathon.Models.Impact;
 
 import java.util.ArrayList;
 
@@ -23,7 +24,10 @@ public class MainView extends View
     private int position = 0;
     private Integer currentPosition = 0;
     private ArrayList<Action> actions;
-    
+    private float ecologyStatus = 100;
+    private float economyStatus = 100;
+    private float comfortStatus = 100;
+
     public MainView(Context context)
     {
         super(context);
@@ -120,7 +124,7 @@ public class MainView extends View
         canvas.drawBitmap(resizedEarth, 40,300, paint);
         Bitmap bbar = BitmapFactory.decodeResource(getResources(), R.drawable.blue_bar);
         Bitmap resizedBBar = Bitmap.createScaledBitmap(
-                bbar, x-200, 50, false);
+                bbar, x-100+(int) ecologyStatus, 50, false);
         canvas.drawBitmap(resizedBBar, 100,300, paint);
     }
 
@@ -131,7 +135,7 @@ public class MainView extends View
         canvas.drawBitmap(resizedGold, 40,200, paint);
         Bitmap gbar = BitmapFactory.decodeResource(getResources(), R.drawable.green_bar);
         Bitmap resizedGBar = Bitmap.createScaledBitmap(
-                gbar, x-200, 50, false);
+                gbar, x-100+(int) economyStatus, 50, false);
         canvas.drawBitmap(resizedGBar, 100,200, paint);
     }
 
@@ -143,7 +147,7 @@ public class MainView extends View
      
         Bitmap bar = BitmapFactory.decodeResource(getResources(), R.drawable.bar);
         Bitmap resizedBar = Bitmap.createScaledBitmap(
-                bar, x-200, 50, false);
+                bar, x-100+(int) comfortStatus, 50, false);
         canvas.drawBitmap(resizedBar, 100,100, paint);
     }
 
@@ -174,6 +178,25 @@ public class MainView extends View
         if (scrollingBg % 2 == 0)
             position++;
 
+        this.invalidate();
+    }
+
+    public void updateStatus(Action action) {
+        for (Impact impact : action.getImpacts()) {
+            switch (impact.getCaracteristic()) {
+                case "Ecology":
+                    ecologyStatus += impact.getPointsYes() + impact.getPointsNo();
+                    break;
+                case "Economy":
+                    economyStatus += impact.getPointsYes() + impact.getPointsNo();
+                    break;
+                case "Comfort":
+                    comfortStatus += impact.getPointsYes() + impact.getPointsNo();
+                    break;
+                default:
+                    break;
+            }
+        }
         this.invalidate();
     }
 }
