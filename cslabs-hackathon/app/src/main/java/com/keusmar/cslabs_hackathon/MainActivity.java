@@ -18,20 +18,11 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(new MainView(this));
-        ReadData rd = new ReadData(this);
-        ArrayList<Action> actions = rd.getActions();
         GameImpactData gid = new GameImpactData();
-
-        for(Action action:actions){
-            for(Impact impact:action.getImpacts()){
-                gid.applyGameImpact(impact, true);
-            }
-        }
-
-        ArrayList<GameImpact> impacts = gid.getGameImpacts();
-        GameImpact earth = gid.getGameImpactByName(CaracteristicConstants.EARTH);
-        GameImpact test = gid.getGameImpactByName("Yeet");
-
+        MainView mainView = new MainView(this);
+        MainThread mainThread = new MainThread(mainView, this);
+        Thread thread = new Thread(mainThread);
+        thread.start();
+        setContentView(mainView);
     }
 }
