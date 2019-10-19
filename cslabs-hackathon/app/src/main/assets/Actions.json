@@ -4,19 +4,23 @@
       "Content": "Acheter de la cara en cannette",
       "Impacts": [
         {
-          "Points": "-1",
+          "PointsYes": "-1",
+          "PointsNo": "+0",
           "Caracteristic": "Money"
         },
         {
-          "Points": "+2",
+          "PointsYes": "+2",
+          "PointsNo": "-1",
           "Caracteristic": "Friendship"
         },
         {
-          "Points": "-1",
+          "PointsYes": "-1",
+          "PointsNo": "+0",
           "Caracteristic": "Health"
         },
         {
-          "Points": "-1",
+          "PointsYes": "-1",
+          "PointsNo": "+1",
           "Caracteristic": "Earth"
         }
       ]
@@ -25,11 +29,13 @@
       "Content": "Laisser la lumière allumée quand on quitte une pièce",
       "Impacts": [
         {
-          "Points": "-2",
+          "PointsYes": "-2",
+          "PointsNo": "+0",
           "Caracteristic": "Money"
         },
         {
-          "Points": "-2",
+          "PointsYes": "-2",
+          "PointsNo": "+2",
           "Caracteristic": "Earth"
         }
       ]

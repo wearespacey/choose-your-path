@@ -3,10 +3,15 @@ package com.keusmar.cslabs_hackathon;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.view.SurfaceView;
 
 import com.keusmar.cslabs_hackathon.Data.GameImpactData;
 import com.keusmar.cslabs_hackathon.Data.ReadData;
+import com.keusmar.cslabs_hackathon.Models.Action;
+import com.keusmar.cslabs_hackathon.Models.CaracteristicConstants;
+import com.keusmar.cslabs_hackathon.Models.GameImpact;
+import com.keusmar.cslabs_hackathon.Models.Impact;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
