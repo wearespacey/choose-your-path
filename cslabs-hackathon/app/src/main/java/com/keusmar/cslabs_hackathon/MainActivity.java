@@ -15,6 +15,5 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(new MainView(this));
         GameImpactData gid = new GameImpactData();
-        gid.loadGameImpacts();
     }
 }
