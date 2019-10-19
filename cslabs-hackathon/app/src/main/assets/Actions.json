@@ -4,18 +4,18 @@
       "Content": "Acheter de la cara en cannette ?",
       "Impacts": [
         {
-          "PointsYes": -20,
+          "PointsYes": -5,
           "PointsNo": 0,
           "Caracteristic": "Economy"
         },
         {
-          "PointsYes": -10,
+          "PointsYes": -5,
           "PointsNo": 0,
           "Caracteristic": "Comfort"
         },
         {
-          "PointsYes": -10,
-          "PointsNo": 10,
+          "PointsYes": -5,
+          "PointsNo": 5,
           "Caracteristic": "Ecology"
         }
       ]
@@ -24,89 +24,274 @@
       "Content": "Laisser la lumière allumée quand on quitte une pièce",
       "Impacts": [
         {
-          "PointsYes": -10,
+          "PointsYes": -5,
           "PointsNo": 0,
           "Caracteristic": "Economy"
         },
         {
-          "PointsYes":-10,
-          "PointsNo": 20,
-          "Caracteristic": "Ecology"
-        }
-      ]
-    },
-    {
-      "Content": "Test2",
-      "Impacts": [
-        {
-          "PointsYes": -20,
-          "PointsNo": 0,
-          "Caracteristic": "Economy"
-        },
-        {
-          "PointsYes":-20,
-          "PointsNo": 20,
-          "Caracteristic": "Ecology"
-        }
-      ]
-    },
-    {
-      "Content": "Test3",
-      "Impacts": [
-        {
-          "PointsYes": -10,
-          "PointsNo": 5,
-          "Caracteristic": "Economy"
-        },
-        {
-          "PointsYes":-10,
+          "PointsYes":-5,
           "PointsNo": 5,
           "Caracteristic": "Ecology"
         }
       ]
     },
     {
-      "Content": "Test4",
+      "Content": "Un ananas apparait, ça serait rafraichissant en été, tu le prends?",
       "Impacts": [
         {
-          "PointsYes": -10,
-          "PointsNo": 0,
+          "PointsYes": -5,
+          "PointsNo": 5,
           "Caracteristic": "Economy"
         },
         {
-          "PointsYes":-20,
-          "PointsNo": 10,
+          "PointsYes":-5,
+          "PointsNo": 5,
           "Caracteristic": "Ecology"
+        },
+        {
+          "PointsYes":5,
+          "PointsNo": 5,
+          "Caracteristic": "Comfort"
         }
       ]
     },
     {
-      "Content": "Test5",
+      "Content": "(En été) Tu manges tes restes de carottes? Ou non tu préfères le resto ?",
       "Impacts": [
         {
-          "PointsYes": -10,
-          "PointsNo": 0,
+          "PointsYes": -5,
+          "PointsNo": -5,
+          "Caracteristic": "Ecology"
+        },
+        {
+          "PointsYes":-5,
+          "PointsNo": 5,
           "Caracteristic": "Economy"
         },
         {
-          "PointsYes":-20,
-          "PointsNo": 20,
-          "Caracteristic": "Ecology"
+          "PointsYes":5,
+          "PointsNo": 5,
+          "Caracteristic": "Comfort"
         }
       ]
     },
     {
-      "Content": "Test6",
+      "Content": "(!alerte soif!) Acheter une gourde ? Non acheter au distributeur",
       "Impacts": [
         {
-          "PointsYes": -20,
+          "PointsYes": 5,
+          "PointsNo": -5,
+          "Caracteristic": "Ecology"
+        },
+        {
+          "PointsYes":-5,
+          "PointsNo": -5,
+          "Caracteristic": "Economy"
+        },
+        {
+          "PointsYes":5,
+          "PointsNo": 5,
+          "Caracteristic": "Comfort"
+        }
+      ]
+    },
+    {
+      "Content": "Est-tu prêt à réduire ta consomation de viande à 2x par semaine?",
+      "Impacts": [
+        {
+          "PointsYes": 5,
+          "PointsNo": -5,
+          "Caracteristic": "Ecology"
+        },
+        {
+          "PointsYes":5,
+          "PointsNo": -5,
+          "Caracteristic": "Economy"
+        },
+        {
+          "PointsYes":-5,
+          "PointsNo": 5,
+          "Caracteristic": "Comfort"
+        }
+      ]
+    },
+    {
+      "Content": "Tu découvres qu'on peut maintenant manger des insectes, tu tentes?",
+      "Impacts": [
+        {
+          "PointsYes": 5,
+          "PointsNo": -5,
+          "Caracteristic": "Ecology"
+        },
+        {
+          "PointsYes":5,
+          "PointsNo": -5,
+          "Caracteristic": "Economy"
+        },
+        {
+          "PointsYes":0,
+          "PointsNo": 0,
+          "Caracteristic": "Comfort"
+        }
+      ]
+    },
+    {
+      "Content": "La veste ExtraDry est en promo. Quelle affaire ! Tu l'achètes ou pas?",
+      "Impacts": [
+        {
+          "PointsYes": -5,
+          "PointsNo": 5,
+          "Caracteristic": "Ecology"
+        },
+        {
+          "PointsYes":5,
           "PointsNo": 0,
           "Caracteristic": "Economy"
         },
         {
-          "PointsYes":-20,
-          "PointsNo": 20,
+          "PointsYes":5,
+          "PointsNo": -5,
+          "Caracteristic": "Comfort"
+        }
+      ]
+    },
+    {
+      "Content": "Tu as enfin fait le tri dans ta garde-robe. Tu les donnes à une oeuvre de charité ?  Ou non à la poubelle",
+      "Impacts": [
+        {
+          "PointsYes": -5,
+          "PointsNo": 5,
           "Caracteristic": "Ecology"
+        },
+        {
+          "PointsYes":0,
+          "PointsNo": 0,
+          "Caracteristic": "Economy"
+        },
+        {
+          "PointsYes":-5,
+          "PointsNo": 5,
+          "Caracteristic": "Comfort"
+        }
+      ]
+    },
+    {
+      "Content": "Promo sur les Snackers 10 paquets de 1, c'est moins cher que 1 paquet de 10 ! Tu prends?",
+      "Impacts": [
+        {
+          "PointsYes": -5,
+          "PointsNo": 5,
+          "Caracteristic": "Ecology"
+        },
+        {
+          "PointsYes":5,
+          "PointsNo": -5,
+          "Caracteristic": "Economy"
+        },
+        {
+          "PointsYes":5,
+          "PointsNo": 5,
+          "Caracteristic": "Comfort"
+        }
+      ]
+    },
+    {
+      "Content": "Oh un bébé ! Il te propose une couche réutilisable ou un usage unique. Tu laverais une couche?",
+      "Impacts": [
+        {
+          "PointsYes": 5,
+          "PointsNo": -5,
+          "Caracteristic": "Ecology"
+        },
+        {
+          "PointsYes":5,
+          "PointsNo": -5,
+          "Caracteristic": "Economy"
+        },
+        {
+          "PointsYes":-5,
+          "PointsNo": 5,
+          "Caracteristic": "Comfort"
+        }
+      ]
+    },
+    {
+      "Content": "Ton frère te demande d'aller le chercher à la gare en voiture parce qu'il ne veut pas marcher 15 minutes. T'y vas ou pas?",
+      "Impacts": [
+        {
+          "PointsYes": -5,
+          "PointsNo": 5,
+          "Caracteristic": "Ecology"
+        },
+        {
+          "PointsYes":-5,
+          "PointsNo": 5,
+          "Caracteristic": "Economy"
+        },
+        {
+          "PointsYes":5,
+          "PointsNo": -5,
+          "Caracteristic": "Comfort"
+        }
+      ]
+    },
+    {
+      "Content": "Ton co-voiturage t'a laché juste avant le boulot. Tu prends ta voiture ou tu prends le bus?",
+      "Impacts": [
+        {
+          "PointsYes": 5,
+          "PointsNo": -5,
+          "Caracteristic": "Ecology"
+        },
+        {
+          "PointsYes":5,
+          "PointsNo": -5,
+          "Caracteristic": "Economy"
+        },
+        {
+          "PointsYes":5,
+          "PointsNo": -5,
+          "Caracteristic": "Comfort"
+        }
+      ]
+    },
+    {
+      "Content": "Il pleut, ton boulot est à 4 minutes en voiture, mais 15 en vélo. Tu prends la voiture?",
+      "Impacts": [
+        {
+          "PointsYes": -5,
+          "PointsNo": 5,
+          "Caracteristic": "Ecology"
+        },
+        {
+          "PointsYes": -5,
+          "PointsNo": 5,
+          "Caracteristic": "Economy"
+        },
+        {
+          "PointsYes":5,
+          "PointsNo": -5,
+          "Caracteristic": "Comfort"
+        }
+      ]
+    },
+    {
+      "Content": "Ca y est, tu as enfin attrapé cette abeille qui t'ennuie depuis deux heures. Tu la tues?",
+      "Impacts": [
+        {
+          "PointsYes": -5,
+          "PointsNo": 5,
+          "Caracteristic": "Ecology"
+        },
+        {
+          "PointsYes": 0,
+          "PointsNo": 0,
+          "Caracteristic": "Economy"
+        },
+        {
+          "PointsYes": 0,
+          "PointsNo": 0,
+          "Caracteristic": "Comfort"
         }
       ]
     }
