@@ -1,23 +1,35 @@
 package com.keusmar.cslabs_hackathon.Data;
 
+import com.keusmar.cslabs_hackathon.Models.CaracteristicConstants;
 import com.keusmar.cslabs_hackathon.Models.GameImpact;
-import com.keusmar.cslabs_hackathon.Models.Impact;
-
 import java.util.ArrayList;
 
-public class GlobalImpactData {
+public class GameImpactData {
 
-    public static ArrayList<GameImpact> getGlobalImpacts() {
-        return null;
+    private  ArrayList<GameImpact> gameImpacts;
+    private final Float MAX_POINTS = 100.0f;
+
+    public GameImpactData(){
+        this.gameImpacts = new ArrayList<GameImpact>(){
+            {
+                for(String caract:CaracteristicConstants.ALL_CARACTERISITCS){
+                    add(new GameImpact(caract, MAX_POINTS, MAX_POINTS));
+                }
+            }
+        };
     }
 
-    public static void setGlobalImpacts() {
-
+    public  ArrayList<GameImpact> getGameImpacts() {
+        return gameImpacts;
     }
 
-    public static void applyGlobalImpact(String impactName, Float value) {
-        ArrayList<GameImpact> impacts = getGlobalImpacts();
-        for (GameImpact g:impacts) {
+    public  void setGameImpacts(ArrayList<GameImpact> impacts) {
+        this.gameImpacts = impacts;
+    }
+
+
+    public  void applyGameImpact(String impactName, Float value) {
+        for (GameImpact g: getGameImpacts()) {
             if(g.getCaracteristic().equals(impactName))
                 g.setActualPoints(g.getActualPoints()+value);
         }

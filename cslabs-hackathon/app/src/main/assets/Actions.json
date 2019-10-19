@@ -1,0 +1,38 @@
+{
+  "Actions": [
+    {
+      "Content": "Acheter de la cara en cannette",
+      "Impacts": [
+        {
+          "Points": "-1",
+          "Caracteristic": "Money"
+        },
+        {
+          "Points": "+2",
+          "Caracteristic": "Friendship"
+        },
+        {
+          "Points": "-1",
+          "Caracteristic": "Health"
+        },
+        {
+          "Points": "-1",
+          "Caracteristic": "Earth"
+        }
+      ]
+    },
+    {
+      "Content": "Laisser la lumière allumée quand on quitte une pièce",
+      "Impacts": [
+        {
+          "Points": "-2",
+          "Caracteristic": "Money"
+        },
+        {
+          "Points": "-2",
+          "Caracteristic": "Earth"
+        }
+      ]
+    }
+  ]
+}

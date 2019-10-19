@@ -6,6 +6,8 @@ public class Action {
     private String content;
     private ArrayList<Impact> impacts;
 
+    public Action(){this.impacts = new ArrayList<>();}
+
     public Action(String content, ArrayList<Impact> impacts) {
         setContent(content);
         setImpacts(impacts);
@@ -26,4 +28,6 @@ public class Action {
     public void setImpacts(ArrayList<Impact> impacts) {
         this.impacts = impacts;
     }
+
+    public void addImpact(Impact impact){this.impacts.add(impact);}
 }
