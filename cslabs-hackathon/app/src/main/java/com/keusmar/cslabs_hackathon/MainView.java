@@ -1,6 +1,9 @@
 package com.keusmar.cslabs_hackathon;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
@@ -9,14 +12,18 @@ import android.graphics.Paint;
 import android.graphics.Typeface;
 import android.view.View;
 
+import com.keusmar.cslabs_hackathon.Character.CharacterColor;
 import com.keusmar.cslabs_hackathon.Models.Action;
 import com.keusmar.cslabs_hackathon.Models.Impact;
 
 import java.util.ArrayList;
 
+import static com.keusmar.cslabs_hackathon.Character.CharacterColor.*;
+
 
 public class MainView extends View
 {
+    public final float MAX_STAT = 100;
     Paint paint = null;
     private Integer rotation = 0;
     private Integer scrollingBg = 0;
@@ -28,16 +35,50 @@ public class MainView extends View
     private float ecologyRatio = 100;
     private float economyStatus = 100;
     private float comfortStatus = 100;
+    private Integer day_number = 1;
     private int alphaValue = 0;
 
-    public MainView(Context context)
+    public MainView(Context context, CharacterColor color)
     {
         super(context);
-        animations.add(R.drawable.b1);
-        animations.add(R.drawable.b2);
-        animations.add(R.drawable.b3);
-        animations.add(R.drawable.b4);
-        animations.add(R.drawable.b5);
+        switch (color){
+            case ALIEN_BEIGE:
+                animations.add(R.drawable.b1);
+                animations.add(R.drawable.b2);
+                animations.add(R.drawable.b3);
+                animations.add(R.drawable.b4);
+                animations.add(R.drawable.b5);
+            break;
+            case ALIEN_BLUE:
+                animations.add(R.drawable.bu1);
+                animations.add(R.drawable.bu2);
+                animations.add(R.drawable.bu3);
+                animations.add(R.drawable.bu4);
+                animations.add(R.drawable.bu5);
+            break;
+            case ALIEN_PINK:
+                animations.add(R.drawable.r1);
+                animations.add(R.drawable.r2);
+                animations.add(R.drawable.r3);
+                animations.add(R.drawable.r4);
+                animations.add(R.drawable.r5);
+            break;
+            case ALIEN_GREEN:
+                animations.add(R.drawable.g1);
+                animations.add(R.drawable.g2);
+                animations.add(R.drawable.g3);
+                animations.add(R.drawable.g4);
+                animations.add(R.drawable.g5);
+            break;
+            case ALIEN_YELLOW:
+                animations.add(R.drawable.y1);
+                animations.add(R.drawable.y2);
+                animations.add(R.drawable.y3);
+                animations.add(R.drawable.y4);
+                animations.add(R.drawable.y5);
+            break;
+        }
+
         paint = new Paint();
     }
 
@@ -78,11 +119,13 @@ public class MainView extends View
         paint.setTextSize(80);
         canvas.save();
         canvas.rotate(15, x-300, 80);
-        canvas.drawText("#Day 1", x-298, 82, paint);
+        canvas.drawText("#Day " + day_number, x-298, 82, paint);
         paint.setColor(Color.parseColor("#FFD723"));
-        canvas.drawText("#Day 1", x-300, 80, paint);
+        canvas.drawText("#Day " + day_number, x-300, 80, paint);
         canvas.restore();
     }
+
+    public void incrementDayNumber(){day_number++;}
 
     private void drawChoiceBtns(Canvas canvas, int x, int y) {
         Bitmap validate = BitmapFactory.decodeResource(getResources(), R.drawable.validate);
@@ -129,32 +172,34 @@ public class MainView extends View
         Bitmap resizedEarth = Bitmap.createScaledBitmap(
                 earth, 50, 50, false);
         canvas.drawBitmap(resizedEarth, 40,300, paint);
+
+        int w = (int)((getWidth()-200)*(ecologyStatus/100));
         Bitmap bbar = BitmapFactory.decodeResource(getResources(), R.drawable.blue_bar);
-        Bitmap resizedBBar = Bitmap.createScaledBitmap(
-                bbar, (x-100)-(int) ecologyStatus, 50, false);
+        Bitmap resizedBBar = Bitmap.createScaledBitmap(bbar, w > 0 ? w:1, 50, false);
         canvas.drawBitmap(resizedBBar, 100,300, paint);
     }
 
-    private void drawGoldbar(Canvas canvas, int x) {
+    private void drawGoldbar(Canvas canvas, int deviceWidth) {
         Bitmap gold = BitmapFactory.decodeResource(getResources(), R.drawable.gold);
         Bitmap resizedGold = Bitmap.createScaledBitmap(
                 gold, 50, 50, false);
         canvas.drawBitmap(resizedGold, 40,200, paint);
+
+        int w = (int)((deviceWidth-200)*(economyStatus/100));
         Bitmap gbar = BitmapFactory.decodeResource(getResources(), R.drawable.green_bar);
-        Bitmap resizedGBar = Bitmap.createScaledBitmap(
-                gbar, x-100-(int) economyStatus, 50, false);
+        Bitmap resizedGBar = Bitmap.createScaledBitmap(gbar, w > 0 ? w:1, 50, false);
         canvas.drawBitmap(resizedGBar, 100,200, paint);
     }
 
-    private void drawHeartbar(Canvas canvas, int x) {
+    private void drawHeartbar(Canvas canvas, int deviceWidth) {
         Bitmap heart = BitmapFactory.decodeResource(getResources(), R.drawable.heart);
         Bitmap resizedHeart = Bitmap.createScaledBitmap(
                 heart, 50, 50, false);
         canvas.drawBitmap(resizedHeart, 40,100, paint);
-     
+
+        int w = (int)((deviceWidth-200)*(comfortStatus/100));
         Bitmap bar = BitmapFactory.decodeResource(getResources(), R.drawable.bar);
-        Bitmap resizedBar = Bitmap.createScaledBitmap(
-                bar, x-100-(int) comfortStatus, 50, false);
+        Bitmap resizedBar = Bitmap.createScaledBitmap(bar, w > 0 ? w:1, 50, false);
         canvas.drawBitmap(resizedBar, 100,100, paint);
     }
 
@@ -185,6 +230,7 @@ public class MainView extends View
     }
 
     public void refresh() {
+
         this.rotation+=2;
         scrollingBg++;
         if (scrollingBg % 2 == 0)
@@ -194,32 +240,44 @@ public class MainView extends View
     }
 
     public void updateStatus(Action action, boolean decision) {
+
         for (Impact impact : action.getImpacts()) {
+            float stat = 0;
+            float points = decision ? impact.getPointsYes() : impact.getPointsNo();
             switch (impact.getCaracteristic()) {
                 case "Ecology":
-                    ecologyStatus -= decision ? impact.getPointsYes() : impact.getPointsNo();
+                    stat = ecologyStatus + points;
+                    ecologyStatus = stat < MAX_STAT ? (stat < 0 ? 0 : stat) : MAX_STAT;
                     break;
                 case "Economy":
-                    economyStatus -= decision ? impact.getPointsYes() : impact.getPointsNo();
+                    stat = economyStatus + points;
+                    economyStatus = stat < MAX_STAT ? (stat < 0 ? 0 : stat) : MAX_STAT;
                     break;
                 case "Comfort":
-                    comfortStatus -= decision ? impact.getPointsYes() : impact.getPointsNo();
+                    stat = comfortStatus + points;
+                    comfortStatus = stat < MAX_STAT ? (stat < 0 ? 0 : stat) : MAX_STAT;
                     break;
                 default:
                     break;
             }
-            if (economyStatus < 0 || ecologyStatus < 0 || comfortStatus < 0) {
-                ecologyStatus = 100;
-                economyStatus = 100;
-                comfortStatus = 100;
-            }
         }
+
         this.invalidate();
+        if(ecologyStatus <= 0 || economyStatus <= 0 || comfortStatus <= 0) {
+
+            AlertDialog.Builder dlg = new AlertDialog.Builder(getContext());
+            dlg.setMessage("GAME OVER\nBoi yo ded.");
+            dlg.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int id) {
+//                    getContext().startActivity(new Intent(getContext(), RecapActivity.class));
+                    dialog.cancel();
+                }
+            });
+            dlg.show();
+        }
     }
 
     private int getAlphaValue() {
-        float ratio = getWidth() - 200;
-        ecologyRatio = ((ratio - ecologyStatus)/ratio)*100;
-        return (int)(255 - ((255/100) * ecologyRatio));
+        return (int)(255 - ((255/100) * ecologyStatus));
     }
 }
