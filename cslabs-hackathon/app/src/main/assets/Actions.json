@@ -4,7 +4,7 @@
       "Content": "Acheter de la cara en cannette ?",
       "Impacts": [
         {
-          "PointsYes": -50,
+          "PointsYes": -20,
           "PointsNo": 0,
           "Caracteristic": "Economy"
         },
@@ -24,13 +24,13 @@
       "Content": "Laisser la lumière allumée quand on quitte une pièce",
       "Impacts": [
         {
-          "PointsYes": -2,
+          "PointsYes": -10,
           "PointsNo": 0,
           "Caracteristic": "Economy"
         },
         {
-          "PointsYes":-2,
-          "PointsNo": 2,
+          "PointsYes":-10,
+          "PointsNo": 20,
           "Caracteristic": "Ecology"
         }
       ]
@@ -54,13 +54,13 @@
       "Content": "Test3",
       "Impacts": [
         {
-          "PointsYes": -2,
-          "PointsNo": 0,
+          "PointsYes": -10,
+          "PointsNo": 5,
           "Caracteristic": "Economy"
         },
         {
-          "PointsYes":-2,
-          "PointsNo": 2,
+          "PointsYes":-10,
+          "PointsNo": 5,
           "Caracteristic": "Ecology"
         }
       ]
@@ -69,13 +69,13 @@
       "Content": "Test4",
       "Impacts": [
         {
-          "PointsYes": -20,
+          "PointsYes": -10,
           "PointsNo": 0,
           "Caracteristic": "Economy"
         },
         {
           "PointsYes":-20,
-          "PointsNo": 20,
+          "PointsNo": 10,
           "Caracteristic": "Ecology"
         }
       ]
@@ -84,7 +84,7 @@
       "Content": "Test5",
       "Impacts": [
         {
-          "PointsYes": -20,
+          "PointsYes": -10,
           "PointsNo": 0,
           "Caracteristic": "Economy"
         },
