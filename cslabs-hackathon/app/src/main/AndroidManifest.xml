@@ -20,6 +20,9 @@
             </intent-filter>
         </activity>
 
+        <activity
+            android:name=".RecapActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

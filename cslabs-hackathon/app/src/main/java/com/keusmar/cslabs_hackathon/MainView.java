@@ -1,6 +1,9 @@
 package com.keusmar.cslabs_hackathon;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
@@ -20,6 +23,7 @@ import static com.keusmar.cslabs_hackathon.Character.CharacterColor.*;
 
 public class MainView extends View
 {
+    public final float MAX_STAT = 100;
     Paint paint = null;
     private Integer rotation = 0;
     private Integer scrollingBg = 0;
@@ -156,37 +160,39 @@ public class MainView extends View
         canvas.restore();
     }
 
-    private void drawEarthbar(Canvas canvas, int x) {
+    private void drawEarthbar(Canvas canvas, int deviceWidth) {
         Bitmap earth = BitmapFactory.decodeResource(getResources(), R.drawable.gold);
         Bitmap resizedEarth = Bitmap.createScaledBitmap(
                 earth, 50, 50, false);
         canvas.drawBitmap(resizedEarth, 40,300, paint);
+
+        int w = (int)((deviceWidth-200)*(ecologyStatus/100));
         Bitmap bbar = BitmapFactory.decodeResource(getResources(), R.drawable.blue_bar);
-        Bitmap resizedBBar = Bitmap.createScaledBitmap(
-                bbar, (x-100)-(int) ecologyStatus, 50, false);
+        Bitmap resizedBBar = Bitmap.createScaledBitmap(bbar, w > 0 ? w:1, 50, false);
         canvas.drawBitmap(resizedBBar, 100,300, paint);
     }
 
-    private void drawGoldbar(Canvas canvas, int x) {
+    private void drawGoldbar(Canvas canvas, int deviceWidth) {
         Bitmap gold = BitmapFactory.decodeResource(getResources(), R.drawable.gold);
         Bitmap resizedGold = Bitmap.createScaledBitmap(
                 gold, 50, 50, false);
         canvas.drawBitmap(resizedGold, 40,200, paint);
+
+        int w = (int)((deviceWidth-200)*(economyStatus/100));
         Bitmap gbar = BitmapFactory.decodeResource(getResources(), R.drawable.green_bar);
-        Bitmap resizedGBar = Bitmap.createScaledBitmap(
-                gbar, x-100-(int) economyStatus, 50, false);
+        Bitmap resizedGBar = Bitmap.createScaledBitmap(gbar, w > 0 ? w:1, 50, false);
         canvas.drawBitmap(resizedGBar, 100,200, paint);
     }
 
-    private void drawHeartbar(Canvas canvas, int x) {
+    private void drawHeartbar(Canvas canvas, int deviceWidth) {
         Bitmap heart = BitmapFactory.decodeResource(getResources(), R.drawable.heart);
         Bitmap resizedHeart = Bitmap.createScaledBitmap(
                 heart, 50, 50, false);
         canvas.drawBitmap(resizedHeart, 40,100, paint);
-     
+
+        int w = (int)((deviceWidth-200)*(comfortStatus/100));
         Bitmap bar = BitmapFactory.decodeResource(getResources(), R.drawable.bar);
-        Bitmap resizedBar = Bitmap.createScaledBitmap(
-                bar, x-100-(int) comfortStatus, 50, false);
+        Bitmap resizedBar = Bitmap.createScaledBitmap(bar, w > 0 ? w:1, 50, false);
         canvas.drawBitmap(resizedBar, 100,100, paint);
     }
 
@@ -224,24 +230,38 @@ public class MainView extends View
     public void updateStatus(Action action, boolean decision) {
 
         for (Impact impact : action.getImpacts()) {
+            float stat = 0;
+            float points = decision ? impact.getPointsYes() : impact.getPointsNo();
             switch (impact.getCaracteristic()) {
                 case "Ecology":
-                    ecologyStatus -= decision ? impact.getPointsYes() : impact.getPointsNo();
+                    stat = ecologyStatus + points;
+                    ecologyStatus = stat < MAX_STAT ? (stat < 0 ? 0 : stat) : MAX_STAT;
                     break;
                 case "Economy":
-                    economyStatus -= decision ? impact.getPointsYes() : impact.getPointsNo();
+                    stat = economyStatus + points;
+                    economyStatus = stat < MAX_STAT ? (stat < 0 ? 0 : stat) : MAX_STAT;
                     break;
                 case "Comfort":
-                    comfortStatus -= decision ? impact.getPointsYes() : impact.getPointsNo();
+                    stat = comfortStatus + points;
+                    comfortStatus = stat < MAX_STAT ? (stat < 0 ? 0 : stat) : MAX_STAT;
                     break;
                 default:
                     break;
             }
-
-            if (economyStatus < 0 || ecologyStatus < 0 || comfortStatus < 0) {
-                // TODO: Go to end screen
-            }
         }
+
         this.invalidate();
+        if(ecologyStatus <= 0 || economyStatus <= 0 || comfortStatus <= 0) {
+
+            AlertDialog.Builder dlg = new AlertDialog.Builder(getContext());
+            dlg.setMessage("GAME OVER\nBoi yo ded.");
+            dlg.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int id) {
+                    getContext().startActivity(new Intent(getContext(), RecapActivity.class));
+                    dialog.cancel();
+                }
+            });
+            dlg.show();
+        }
     }
 }

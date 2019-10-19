@@ -19,7 +19,6 @@ public class MainActivity extends AppCompatActivity {
 
     private Integer currentPosition = 0;
     private ArrayList<Action> actions;
-    private ArrayList<Answer> answers = new ArrayList<Answer>();
     private TextView questionContainer;
     private MainView mainView;
 
@@ -36,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         mainView.setActions(actions);
         MainThread mainThread = new MainThread(mainView, this);
         Thread thread = new Thread(mainThread);
-        thread.start();
+        //thread.start();
         LinearLayout linearLayout = findViewById(R.id.yeet);
         questionContainer = findViewById(R.id.questionContainer);
         questionContainer.setText(getCurrentAction().getContent());
@@ -61,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void answerAction(TextView questionContainer, Action action, boolean response){
-        answers.add(new Answer(action, response));
+        GameImpactData.addAnswer(new Answer(action, response));
         mainView.updateStatus(action, response);
         nextAction();
         if(currentPosition < actions.size())
