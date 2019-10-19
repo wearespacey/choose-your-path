@@ -10,6 +10,10 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(new MainView(this));
+        MainView mainView = new MainView(this);
+        MainThread mainThread = new MainThread(mainView, this);
+        Thread thread = new Thread(mainThread);
+        thread.start();
+        setContentView(mainView);
     }
 }
