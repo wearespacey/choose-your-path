@@ -1,0 +1,412 @@
+Index: cslabs-hackathon/app/src/main/java/com/keusmar/cslabs_hackathon/MainView.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- cslabs-hackathon/app/src/main/java/com/keusmar/cslabs_hackathon/MainView.java	(revision 2e5806de3922556b6876310d98b9c5d319062da5)
++++ cslabs-hackathon/app/src/main/java/com/keusmar/cslabs_hackathon/MainView.java	(date 1571518138904)
+@@ -10,6 +10,7 @@
+ import android.graphics.Color;
+ import android.graphics.Paint;
+ import android.graphics.Typeface;
++import android.graphics.drawable.Drawable;
+ import android.view.View;
+ 
+ import com.keusmar.cslabs_hackathon.Character.CharacterColor;
+@@ -17,6 +18,7 @@
+ import com.keusmar.cslabs_hackathon.Models.Impact;
+ 
+ import java.util.ArrayList;
++import java.util.Random;
+ 
+ import static com.keusmar.cslabs_hackathon.Character.CharacterColor.*;
+ 
+@@ -37,10 +39,37 @@
+     private float comfortStatus = 100;
+     private Integer day_number = 1;
+     private int alphaValue = 0;
++    private ArrayList<Bitmap> bitmaps = new ArrayList<>();;
++    private ArrayList<Bitmap> deadbitmaps = new ArrayList<>();;
++
++    ArrayList<Integer> forest = new ArrayList<>();
++    ArrayList<Integer> deadforest = new ArrayList<>();
+ 
+     public MainView(Context context, CharacterColor color)
+     {
+         super(context);
++
++        forest.add(R.drawable.tree);
++        forest.add(R.drawable.tree2);
++        forest.add(R.drawable.grass2);
++        forest.add(R.drawable.grass4);
++        forest.add(R.drawable.grass6);
++
++        deadforest.add(R.drawable.grass1);
++        deadforest.add(R.drawable.grass3);
++        deadforest.add(R.drawable.tree01);
++        deadforest.add(R.drawable.tree29);
++        deadforest.add(R.drawable.tree30);
++
++        for (int i = 0; i < 15; i++) {
++            Random rand = new Random();
++            Integer nb = rand.nextInt(forest.size()-1 - 0 + 1) + 0;
++            Bitmap item = BitmapFactory.decodeResource(getResources(), forest.get(nb));
++            Bitmap item2 = BitmapFactory.decodeResource(getResources(), deadforest.get(nb));
++            bitmaps.add(item);
++            deadbitmaps.add(item2);
++        }
++
+         switch (color){
+             case ALIEN_BEIGE:
+                 animations.add(R.drawable.b1);
+@@ -160,15 +189,28 @@
+     }
+ 
+     private void drawTree(Canvas canvas, int x, int y) {
+-        Bitmap tree = BitmapFactory.decodeResource(getResources(), R.drawable.tree);
+-        canvas.save();
+-        canvas.rotate(-rotation, x/2, y);
+-        canvas.drawBitmap(tree, (x/2) - tree.getWidth()/2, (y/2) - tree.getHeight() + 55, paint);
+-        canvas.restore();
++        if (ecologyStatus > 50) {
++            for (int i = 0; i < bitmaps.size(); i++) {
++                canvas.save();
++                Bitmap bitmap = bitmaps.get(i);
++                canvas.rotate(-rotation -(45*i) , x/2, y);
++                canvas.drawBitmap(bitmap, (x/2) - bitmap.getWidth()/2, (y/2) - bitmap.getHeight() + 55, paint);
++                canvas.restore();
++            }
++        } else {
++            for (int i = 0; i < bitmaps.size(); i++) {
++                canvas.save();
++                Bitmap bitmap = deadbitmaps.get(i);
++                canvas.rotate(-rotation -(45*i) , x/2, y);
++                canvas.drawBitmap(bitmap, (x/2) - bitmap.getWidth()/2, (y/2) - bitmap.getHeight() + 55, paint);
++                canvas.restore();
++            }
++        }
++
+     }
+ 
+     private void drawEarthbar(Canvas canvas, int x) {
+-        Bitmap earth = BitmapFactory.decodeResource(getResources(), R.drawable.gold);
++        Bitmap earth = BitmapFactory.decodeResource(getResources(), R.drawable.aarth);
+         Bitmap resizedEarth = Bitmap.createScaledBitmap(
+                 earth, 50, 50, false);
+         canvas.drawBitmap(resizedEarth, 40,300, paint);
+@@ -205,7 +247,7 @@
+ 
+     private void drawCloud(Canvas canvas, int x) {
+         Bitmap cloud = BitmapFactory.decodeResource(getResources(), R.drawable.cloud1);
+-        canvas.drawBitmap(cloud, x-scrollingBg,0, paint);
++        canvas.drawBitmap(cloud, x-scrollingBg*4,0, paint);
+         if (x-scrollingBg == (-cloud.getWidth())){
+             scrollingBg = 0;
+         }
+@@ -269,7 +311,7 @@
+             dlg.setMessage("GAME OVER\nBoi yo ded.");
+             dlg.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                 public void onClick(DialogInterface dialog, int id) {
+-//                    getContext().startActivity(new Intent(getContext(), RecapActivity.class));
++                    getContext().startActivity(new Intent(getContext(), RecapActivity.class));
+                     dialog.cancel();
+                 }
+             });
+Index: cslabs-hackathon/app/src/main/java/com/keusmar/cslabs_hackathon/MainThread.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- cslabs-hackathon/app/src/main/java/com/keusmar/cslabs_hackathon/MainThread.java	(revision 2e5806de3922556b6876310d98b9c5d319062da5)
++++ cslabs-hackathon/app/src/main/java/com/keusmar/cslabs_hackathon/MainThread.java	(date 1571515013573)
+@@ -16,7 +16,7 @@
+         while (true) {
+             try {
+                 mainView.refresh();
+-                Thread.sleep(50);
++                Thread.sleep(60);
+             } catch (InterruptedException ex) {
+                 ex.printStackTrace();
+             }
+diff --git cslabs-hackathon/app/src/main/res/drawable/grass2.png cslabs-hackathon/app/src/main/res/drawable/grass2.png
+new file mode 100644
+index 0000000000000000000000000000000000000000..de146ad8997db3ae45ce778ce848b471e0b6efdc
+GIT binary patch
+literal 413
+zc$@*90b>4%P)<h;3K|Lk000e1NJLTq000^Q0012b1^@s6v`>6?0003iNkl<Zc-p;|
+zu?@m76hyNDBQOF59YO+}^hh)a#e@+kDbr8{2Z<3Ffe{#i5g36HfFlHj=sU>|{#d#)
+zIs5#4w&%4N{Y}vE{xOsZkK!i7WZqNh@+NNN8@&$p(S5L;b%kS#E-;!T(NxR?tAGil
+zQXPxO2KlKzi^rC&NC*g=o!lgs2oU34xGEco0HKUNm5rPOLB%El1Qi<_2;_`ds`92{
+zYX!t-h9<ls_wvV>xy^_L1i8`gRYEosHW0QwXd)I6HmaJ4-4Mlk;fewRlSfjxB)@Lt
+zVqtQX1Cd>dI{xa!=U!W{0Cs#YT4^##D)B*EGuHm8U3hS6^!y*)5@s=SX;j%7RW0E3
+zd;v!nMnJo^WL-c|`<nfwB?`DVd&%P90gSeyR`URHXt<vy!T?VI001p?MObuGZ)S9N
+zVRB^vVtFoNY;SL5WO*)Qa(QrcZ!T$VVP|D7P)<iOG(~P>Z)9b1s0M%T00000NkvXX
+Hu0mjfm2jmB
+
+diff --git cslabs-hackathon/app/src/main/res/drawable/tree01.png cslabs-hackathon/app/src/main/res/drawable/tree01.png
+new file mode 100644
+index 0000000000000000000000000000000000000000..c84f726ee1508424e576d9e57e4e164c39a579fa
+GIT binary patch
+literal 2615
+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
+ZZewp`Wpbznf9?PP002ovPDHLkV1h$6-r4{F
+
+diff --git cslabs-hackathon/app/src/main/res/drawable/grass3.png cslabs-hackathon/app/src/main/res/drawable/grass3.png
+new file mode 100644
+index 0000000000000000000000000000000000000000..d724e95d0e5b96394caf6731b8b2a9f81800c2b8
+GIT binary patch
+literal 488
+zc$@*~0T=#>P)<h;3K|Lk000e1NJLTq001Tc001Kh1^@s6`0#ig0004YNkl<Zc-qaF
+z&27R!5QW_VB~StfZV?h;$UP-+<3fJCNdYM#XC$NuY;sKrDZwRBf=ftvz)F_0k!N<;
+z^;&v2us`0+JkOG4k*@V}JjhbJ09EAlksMf=)BES^-A__byT{oSP*5`E1W0M9wqSrv
+z0&M?6UluAEu+rQvno!U_r?+0AHmjRqvxLcj9igf=6jYk|x7Q7~PqX{tVKP$n)zK9f
+zlo|{-C=4BtJyJ+~{y(TQ7}egt7*NfdSxEFvXS%n(>r$XnP*s@uvkTIudzZXh1rOys
+zpb2SPfFo6wwS)1RLcV!}NgR+$on@Rx_K|x1;Wo3plvJtuj5`EcNH~Zg62T&=L&LdX
+z(c|I`Ap%&<S}0vxLP)WvHq;QP+=?{>-WeBb2-t3&_OsJChY4GD@S<$Uls;nO&&Fa;
+z$uV3JyLCA{RDFSUEuk687#j*JmgMLa%{}o8J%)SUr>4;EssAzv;hwi!F8A=txR$z3
+zOTU<xITH3e$yxva04;PySaefwW^{L9a%BKwc`jmXZ*OE|c`jped2n=ZE@^FHXJsx>
+ePDe5{MQ&qnWMy)w27m4V0000<MNUMnLSTZ_t<&@X
+
+diff --git cslabs-hackathon/app/src/main/res/drawable/tree2.png cslabs-hackathon/app/src/main/res/drawable/tree2.png
+new file mode 100644
+index 0000000000000000000000000000000000000000..01845075f194e1a3c1870a812336a9e147c42288
+GIT binary patch
+literal 2509
+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
+XZ)9b1s0M%T00000NkvXXu0mjfS07(P
+
+diff --git cslabs-hackathon/app/src/main/res/drawable/tree30.png cslabs-hackathon/app/src/main/res/drawable/tree30.png
+new file mode 100644
+index 0000000000000000000000000000000000000000..a727b3e4a7dfe197c29ccf38ac5412119df9f7ee
+GIT binary patch
+literal 2196
+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
+
+diff --git cslabs-hackathon/app/src/main/res/drawable/tree29.png cslabs-hackathon/app/src/main/res/drawable/tree29.png
+new file mode 100644
+index 0000000000000000000000000000000000000000..ee1a36054ba019cab69d5a5dc09aadd83d24b031
+GIT binary patch
+literal 2219
+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
+
+diff --git cslabs-hackathon/app/src/main/res/drawable/grass1.png cslabs-hackathon/app/src/main/res/drawable/grass1.png
+new file mode 100644
+index 0000000000000000000000000000000000000000..b6bf25f19f207f96fec6d399ab52e87c117fb17a
+GIT binary patch
+literal 412
+zc$@*80b~A&P)<h;3K|Lk000e1NJLTq000^Q0012b1^@s6v`>6?0003hNkl<Zc-p;|
+zy$!-J5QVb=BQOF59YP{;=ouj$4Sz8VzzEbxNC@K4G6Ewo0wXX2<Oz&IWGA`c!_q6A
+zXTSS=7td?3w&QNg`^QRRvFA6L_B%?7JHL?(7pK+mv77YTtVY>wt}r^xgAtnvZUGZ0
+zjm4ThHb}|v!XDephzSV19c`k;0)&!&R5W4%B3+7e(a1Rvrr213FvUg&0y!g=vb;^P
+zH3C9!N~E|U_u^)p+-5`q!dU3{Eg_o;83<bq>WBn{jjDP^#14^fFI1U;z~PY;hUC{o
+z&Nob|G!Phys9FBdsI_$jPz73TWE!c&hNfnu`l(oKoEl}{Ga4Od!N8?aY1b(00#4r-
+zaCBqjN0m+11q79Uv%hqS5AJpUWbyC-MpKz?^8_HJ_;-^krXv6V04;PySaefwW^{L9
+za%BKwc`jmXZ*OE|c`jped2n=ZE@^FHXJsx>PDe5{MQ&qnWMy)w27m4V0000<MNUMn
+GLSTZHD5i}7
+
+diff --git cslabs-hackathon/app/src/main/res/drawable/grass6.png cslabs-hackathon/app/src/main/res/drawable/grass6.png
+new file mode 100644
+index 0000000000000000000000000000000000000000..026ed4e3230134df9478b6149b81ae2d319b502b
+GIT binary patch
+literal 484
+zc$@*`0UQ2_P)<h;3K|Lk000e1NJLTq001Tc001Kh1^@s6`0#ig0004UNkl<Zc-qaF
+zy^X>^5QW_VB~StZ8A3W($caeMNylGKNa%zB79>ib1WLFPD8VIA0_?L`$ru}Eci5km
+zCbPVs-poADI7vL6@w(keVmpAEOL2-0Y`zo6<zaY>3Th_%KY&6+lg>PadvVoZfQ%!B
+zQk*qZG+?t`@2?1jQ0k>Yp(dM7vzWqYz*Gt^WhlgAKlrzkf7>7ZZo4fOlv1S%iVc=a
+zE=30KF@?nQbx@B~UO8#Vo?iBVMBNbFJ$nbnGTC>jK<!NBU{wXF-ThNomkKVWTu_A6
+zB|r(5mz9n2n*o2bH%9{nOoQ!ZltQ)w<BmVnVzvOgu<DH31YAfch$b?Eg;TqRt5j6g
+zxbcMG987&3NCRcnl;9XF4cY`OwR|;!wa58t0<v1@4z#l?vn3lZ(gsfnVG}PCi{6rb
+zsA8;EzC6^-=|R*gAEYsWT4(y|<xxH354sQathXlD>al+rxKPhpt(vtz{Z@S1mhPt7
+z$ROd;gh&7Y04;PySaefwW^{L9a%BKwc`jmXZ*OE|c`jped2n=ZE@^FHXJsx>PDe5{
+aMQ&qnWMy)w27m4V0000<MNUMnLSTa2t<LQL
+
+diff --git cslabs-hackathon/app/src/main/res/drawable/grass4.png cslabs-hackathon/app/src/main/res/drawable/grass4.png
+new file mode 100644
+index 0000000000000000000000000000000000000000..381bbbeebe2b44c24786165cfd10f76e501b0ce8
+GIT binary patch
+literal 492
+zc$@+30Tcd-P)<h;3K|Lk000e1NJLTq001Tc001Kh1^@s6`0#ig0004cNkl<Zc-qaF
+z!HvQ&5Jl4gB~StfZU||Yz#WMTTG@mWICA8|0UV?)VN0L{N}z<4KnY8Jz)}DMV-I#5
+zX>L*c^k?RKCP@<L=`KgDB(?`osS<zDfu&pVJKAOcQ9%vV&ljK&(WJ9VVLm%)FhItU
+zLM8VaDjKlwt(e!L5NR$~jY9R-lXg9Y(SW5YJKjSfhPgbrb<ido_czlH3#wGb1jPoc
+zBv+z<_t-+>{bx{@RL)L}G>GEnV^>Jj4Z+=uS70oYeU%E-&QQsP2~xZJyKpWQ97;K$
+z4yj9k5-cyfH^xr}{LTG-vrxb`*j`2{WG680_(Lsbd$8=tsxxX6a3P@}n#c+kPVF1c
+zsAyT^))Rtvu<~{w4V0!S!7muGYkf5VORZ2%;Oudsnt-epx&!U(%WTQUi?qR0ny`t7
+ziA8V8Aylzet6CnO%;}A&^-$zx8pEq4_w>~(pnBF9dI<HLw<h1}v40u(P|sN{^V%<0
+zpNe<e(ixiTw=GLG(7pfw04;PySaefwW^{L9a%BKwc`jmXZ*OE|c`jped2n=ZE@^FH
+iXJsx>PDe5{MQ&qnWMy)w27m4V0000<MNUMnLSTZyC)H#C
+

@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         LinearLayout linearLayout = findViewById(R.id.yeet);
         questionContainer = findViewById(R.id.questionContainer);
         questionContainer.setText(getCurrentAction().getContent());
-        questionContainer.setTextSize(15);
+        questionContainer.setTextSize(20);
 
         ImageView yesButton = findViewById(R.id.yesButton);
         yesButton.setOnClickListener(new View.OnClickListener() {
