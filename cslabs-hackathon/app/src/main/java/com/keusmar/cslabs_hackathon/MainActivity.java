@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.keusmar.cslabs_hackathon.Data.GameImpactData;
 import com.keusmar.cslabs_hackathon.Data.ReadData;
 import com.keusmar.cslabs_hackathon.Models.Action;
+import com.keusmar.cslabs_hackathon.Models.Answer;
 import com.keusmar.cslabs_hackathon.Models.CaracteristicConstants;
 import com.keusmar.cslabs_hackathon.Models.GameImpact;
 import com.keusmar.cslabs_hackathon.Models.Impact;
@@ -23,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
 
     private Integer currentPosition = 0;
     private ArrayList<Action> actions;
+    private ArrayList<Answer> answers = new ArrayList<Answer>();
+    private TextView questionContainer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         Thread thread = new Thread(mainThread);
         thread.start();
         LinearLayout linearLayout = findViewById(R.id.yeet);
-        TextView questionContainer = findViewById(R.id.questionContainer);
+        questionContainer = findViewById(R.id.questionContainer);
         questionContainer.setText(getCurrentAction().getContent());
         questionContainer.setTextSize(15);
 
@@ -45,11 +48,25 @@ public class MainActivity extends AppCompatActivity {
         yesButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                answerAction(questionContainer, actions.get(currentPosition), true);
             }
         });
         ImageView noButton = findViewById(R.id.noButton);
+        noButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                answerAction(questionContainer, actions.get(currentPosition), false);
+            }
+        });
 
         linearLayout.addView(mainView);
+    }
+
+    private void answerAction(TextView questionContainer, Action action, boolean response){
+        answers.add(new Answer(action, response));
+        nextAction();
+        if(currentPosition < actions.size())
+            questionContainer.setText(getCurrentAction().getContent());
     }
 
     public Action getCurrentAction() {
