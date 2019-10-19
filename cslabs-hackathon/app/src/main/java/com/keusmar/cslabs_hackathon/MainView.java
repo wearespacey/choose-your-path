@@ -25,8 +25,10 @@ public class MainView extends View
     private Integer currentPosition = 0;
     private ArrayList<Action> actions;
     private float ecologyStatus = 100;
+    private float ecologyRatio = 100;
     private float economyStatus = 100;
     private float comfortStatus = 100;
+    private int alphaValue = 0;
 
     public MainView(Context context)
     {
@@ -98,6 +100,11 @@ public class MainView extends View
     private void drawPlanet(Canvas canvas, int x, int y) {
         paint.setColor(Color.parseColor("#267F00"));
         canvas.drawCircle(x / 2, y, x, paint);
+        paint.setColor(Color.parseColor("#5B5546"));
+        paint.setStyle(Paint.Style.FILL);
+        paint.setAlpha(this.getAlphaValue());
+        canvas.drawCircle(x / 2, y, x, paint);
+        paint.setAlpha(255);
         drawTree(canvas, x, y);
     }
 
@@ -162,6 +169,11 @@ public class MainView extends View
     private void drawSky(Canvas canvas, int x, int y) {
         paint.setColor(Color.parseColor("#51B6FF"));
         canvas.drawRect(0, 0,x,y, paint);
+        paint.setColor(Color.parseColor("#606060"));
+        paint.setStyle(Paint.Style.FILL);
+        paint.setAlpha(this.getAlphaValue());
+        canvas.drawRect(0, 0,x,y, paint);
+        paint.setAlpha(255);
     }
 
     public void setActions(ArrayList<Action> actions) {
@@ -203,5 +215,11 @@ public class MainView extends View
             }
         }
         this.invalidate();
+    }
+
+    private int getAlphaValue() {
+        float ratio = getWidth() - 200;
+        ecologyRatio = ((ratio - ecologyStatus)/ratio)*100;
+        return (int)(255 - ((255/100) * ecologyRatio));
     }
 }
