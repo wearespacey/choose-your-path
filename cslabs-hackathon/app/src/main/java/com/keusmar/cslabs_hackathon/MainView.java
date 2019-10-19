@@ -6,7 +6,10 @@ import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.Typeface;
 import android.view.View;
+
+import com.keusmar.cslabs_hackathon.Models.Action;
 
 import java.util.ArrayList;
 
@@ -18,6 +21,8 @@ public class MainView extends View
     private Integer scrollingBg = 0;
     private ArrayList<Integer> animations = new ArrayList();
     private int position = 0;
+    private Integer currentPosition = 0;
+    private ArrayList<Action> actions;
     
     public MainView(Context context)
     {
@@ -52,15 +57,24 @@ public class MainView extends View
         
         dawCharacter(canvas, x, y);
         drawAskBox(canvas, x, y);
-        drawChoiceBtns(canvas, x, y);
+//        drawChoiceBtns(canvas, x, y);
+        Action currentAction = getCurrentAction();
+        paint.setColor(Color.BLACK);
+        paint.setTextSize(80);
+//        canvas.drawText(currentAction.getContent(), 50, y - 500, paint);
     }
+
+
 
     private void drawDayLabel(Canvas canvas, int x) {
         paint.setColor(Color.BLACK);
+        paint.setTypeface(Typeface.create("Arial", Typeface.BOLD));
         paint.setTextSize(80);
         canvas.save();
-        canvas.rotate(45, x-300, 80);
-        canvas.drawText("Day 1", x-300, 80, paint);
+        canvas.rotate(15, x-300, 80);
+        canvas.drawText("#Day 1", x-298, 82, paint);
+        paint.setColor(Color.parseColor("#FFD723"));
+        canvas.drawText("#Day 1", x-300, 80, paint);
         canvas.restore();
     }
 
@@ -144,6 +158,14 @@ public class MainView extends View
     private void drawSky(Canvas canvas, int x, int y) {
         paint.setColor(Color.parseColor("#51B6FF"));
         canvas.drawRect(0, 0,x,y, paint);
+    }
+
+    public void setActions(ArrayList<Action> actions) {
+        this.actions = actions;
+    }
+
+    public Action getCurrentAction() {
+        return this.actions.get(currentPosition);
     }
 
     public void refresh() {
