@@ -1,7 +1,7 @@
 {
   "Actions": [
     {
-      "Content": "Acheter de la cara en cannette",
+      "Content": "Acheter de la cara en cannette ?",
       "Impacts": [
         {
           "PointsYes": "-1",
