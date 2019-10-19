@@ -37,8 +37,8 @@ public class ReadData {
                 for(int u = 0; u < impacts.length(); u++){
                     currentImpact = new Impact();
                     currentImpact.setCaracteristic(impacts.getJSONObject(u).getString("Caracteristic"));
-                    currentImpact.setPointsYes(Float.valueOf(impacts.getJSONObject(u).getString("PointsYes")));
-                    currentImpact.setPointsNo(Float.valueOf(impacts.getJSONObject(u).getString("PointsNo")));
+                    currentImpact.setPointsYes((float) impacts.getJSONObject(u).getInt("PointsYes"));
+                    currentImpact.setPointsNo((float) impacts.getJSONObject(u).getInt("PointsNo"));
                     currentAction.addImpact((currentImpact));
                 }
                 actions.add(currentAction);
