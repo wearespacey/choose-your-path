@@ -4,24 +4,19 @@
       "Content": "Acheter de la cara en cannette ?",
       "Impacts": [
         {
-          "PointsYes": "-1",
-          "PointsNo": "+0",
-          "Caracteristic": "Money"
+          "PointsYes": -1,
+          "PointsNo": 0,
+          "Caracteristic": "Economy"
         },
         {
-          "PointsYes": "+2",
-          "PointsNo": "-1",
-          "Caracteristic": "Friendship"
+          "PointsYes": -1,
+          "PointsNo": 0,
+          "Caracteristic": "Comfort"
         },
         {
-          "PointsYes": "-1",
-          "PointsNo": "+0",
-          "Caracteristic": "Health"
-        },
-        {
-          "PointsYes": "-1",
-          "PointsNo": "+1",
-          "Caracteristic": "Earth"
+          "PointsYes": -1,
+          "PointsNo": 1,
+          "Caracteristic": "Ecology"
         }
       ]
     },
@@ -29,14 +24,14 @@
       "Content": "Laisser la lumière allumée quand on quitte une pièce",
       "Impacts": [
         {
-          "PointsYes": "-2",
-          "PointsNo": "+0",
-          "Caracteristic": "Money"
+          "PointsYes": -2,
+          "PointsNo": 0,
+          "Caracteristic": "Economy"
         },
         {
-          "PointsYes": "-2",
-          "PointsNo": "+2",
-          "Caracteristic": "Earth"
+          "PointsYes":-2,
+          "PointsNo": 2,
+          "Caracteristic": "Ecology"
         }
       ]
     }
