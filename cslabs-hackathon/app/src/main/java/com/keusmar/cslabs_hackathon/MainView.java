@@ -10,6 +10,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Typeface;
+import android.graphics.drawable.Drawable;
 import android.view.View;
 
 import com.keusmar.cslabs_hackathon.Character.CharacterColor;
@@ -17,6 +18,7 @@ import com.keusmar.cslabs_hackathon.Models.Action;
 import com.keusmar.cslabs_hackathon.Models.Impact;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 import static com.keusmar.cslabs_hackathon.Character.CharacterColor.*;
 
@@ -37,10 +39,37 @@ public class MainView extends View
     private float comfortStatus = 100;
     private Integer day_number = 1;
     private int alphaValue = 0;
+    private ArrayList<Bitmap> bitmaps = new ArrayList<>();;
+    private ArrayList<Bitmap> deadbitmaps = new ArrayList<>();;
+
+    ArrayList<Integer> forest = new ArrayList<>();
+    ArrayList<Integer> deadforest = new ArrayList<>();
 
     public MainView(Context context, CharacterColor color)
     {
         super(context);
+
+        forest.add(R.drawable.tree);
+        forest.add(R.drawable.tree2);
+        forest.add(R.drawable.grass2);
+        forest.add(R.drawable.grass4);
+        forest.add(R.drawable.grass6);
+
+        deadforest.add(R.drawable.grass1);
+        deadforest.add(R.drawable.grass3);
+        deadforest.add(R.drawable.tree01);
+        deadforest.add(R.drawable.tree29);
+        deadforest.add(R.drawable.tree30);
+
+        for (int i = 0; i < 15; i++) {
+            Random rand = new Random();
+            Integer nb = rand.nextInt(forest.size()-1 - 0 + 1) + 0;
+            Bitmap item = BitmapFactory.decodeResource(getResources(), forest.get(nb));
+            Bitmap item2 = BitmapFactory.decodeResource(getResources(), deadforest.get(nb));
+            bitmaps.add(item);
+            deadbitmaps.add(item2);
+        }
+
         switch (color){
             case ALIEN_BEIGE:
                 animations.add(R.drawable.b1);
@@ -160,15 +189,28 @@ public class MainView extends View
     }
 
     private void drawTree(Canvas canvas, int x, int y) {
-        Bitmap tree = BitmapFactory.decodeResource(getResources(), R.drawable.tree);
-        canvas.save();
-        canvas.rotate(-rotation, x/2, y);
-        canvas.drawBitmap(tree, (x/2) - tree.getWidth()/2, (y/2) - tree.getHeight() + 55, paint);
-        canvas.restore();
+        if (ecologyStatus > 50) {
+            for (int i = 0; i < bitmaps.size(); i++) {
+                canvas.save();
+                Bitmap bitmap = bitmaps.get(i);
+                canvas.rotate(-rotation -(45*i) , x/2, y);
+                canvas.drawBitmap(bitmap, (x/2) - bitmap.getWidth()/2, (y/2) - bitmap.getHeight() + 55, paint);
+                canvas.restore();
+            }
+        } else {
+            for (int i = 0; i < bitmaps.size(); i++) {
+                canvas.save();
+                Bitmap bitmap = deadbitmaps.get(i);
+                canvas.rotate(-rotation -(45*i) , x/2, y);
+                canvas.drawBitmap(bitmap, (x/2) - bitmap.getWidth()/2, (y/2) - bitmap.getHeight() + 55, paint);
+                canvas.restore();
+            }
+        }
+
     }
 
     private void drawEarthbar(Canvas canvas, int x) {
-        Bitmap earth = BitmapFactory.decodeResource(getResources(), R.drawable.gold);
+        Bitmap earth = BitmapFactory.decodeResource(getResources(), R.drawable.aarth);
         Bitmap resizedEarth = Bitmap.createScaledBitmap(
                 earth, 50, 50, false);
         canvas.drawBitmap(resizedEarth, 40,300, paint);
@@ -205,7 +247,7 @@ public class MainView extends View
 
     private void drawCloud(Canvas canvas, int x) {
         Bitmap cloud = BitmapFactory.decodeResource(getResources(), R.drawable.cloud1);
-        canvas.drawBitmap(cloud, x-scrollingBg,0, paint);
+        canvas.drawBitmap(cloud, x-scrollingBg*4,0, paint);
         if (x-scrollingBg == (-cloud.getWidth())){
             scrollingBg = 0;
         }
@@ -269,7 +311,7 @@ public class MainView extends View
             dlg.setMessage("GAME OVER\nBoi yo ded.");
             dlg.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int id) {
-//                    getContext().startActivity(new Intent(getContext(), RecapActivity.class));
+                    getContext().startActivity(new Intent(getContext(), RecapActivity.class));
                     dialog.cancel();
                 }
             });
