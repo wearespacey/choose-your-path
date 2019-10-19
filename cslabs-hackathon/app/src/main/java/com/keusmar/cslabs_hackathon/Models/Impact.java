@@ -4,6 +4,8 @@ public class Impact {
     private Float points;
     private String caracteristic;
 
+    public Impact(){}
+
     public Impact(Float points, String caracteristic) {
         setPoints(points);
         setCaracteristic(caracteristic);
