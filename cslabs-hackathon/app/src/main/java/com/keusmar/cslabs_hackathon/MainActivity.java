@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
         return currentAction;
     }
     public void nextAction() {
-        if (currentPosition < actions.size()) {
+        if (currentPosition < actions.size()-1) {
             currentPosition++;
         }
     }
