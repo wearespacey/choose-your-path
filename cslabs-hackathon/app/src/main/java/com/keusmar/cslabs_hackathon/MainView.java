@@ -86,7 +86,7 @@ public class MainView extends View
         Bitmap validate = BitmapFactory.decodeResource(getResources(), R.drawable.validate);
         canvas.drawBitmap(validate, 200, y-300, paint);
         Bitmap refuse = BitmapFactory.decodeResource(getResources(), R.drawable.refuse);
-        canvas.drawBitmap(refuse, x-200-refuse.getWidth(), y-300, paint);
+        canvas.drawBitmap(refuse, x-100-refuse.getWidth(), y-300, paint);
     }
 
     private void drawAskBox(Canvas canvas, int x, int y) {
@@ -124,7 +124,7 @@ public class MainView extends View
         canvas.drawBitmap(resizedEarth, 40,300, paint);
         Bitmap bbar = BitmapFactory.decodeResource(getResources(), R.drawable.blue_bar);
         Bitmap resizedBBar = Bitmap.createScaledBitmap(
-                bbar, x-100+(int) ecologyStatus, 50, false);
+                bbar, (x-100)-(int) ecologyStatus, 50, false);
         canvas.drawBitmap(resizedBBar, 100,300, paint);
     }
 
@@ -135,7 +135,7 @@ public class MainView extends View
         canvas.drawBitmap(resizedGold, 40,200, paint);
         Bitmap gbar = BitmapFactory.decodeResource(getResources(), R.drawable.green_bar);
         Bitmap resizedGBar = Bitmap.createScaledBitmap(
-                gbar, x-100+(int) economyStatus, 50, false);
+                gbar, x-100-(int) economyStatus, 50, false);
         canvas.drawBitmap(resizedGBar, 100,200, paint);
     }
 
@@ -147,7 +147,7 @@ public class MainView extends View
      
         Bitmap bar = BitmapFactory.decodeResource(getResources(), R.drawable.bar);
         Bitmap resizedBar = Bitmap.createScaledBitmap(
-                bar, x-100+(int) comfortStatus, 50, false);
+                bar, x-100-(int) comfortStatus, 50, false);
         canvas.drawBitmap(resizedBar, 100,100, paint);
     }
 
@@ -181,20 +181,25 @@ public class MainView extends View
         this.invalidate();
     }
 
-    public void updateStatus(Action action) {
+    public void updateStatus(Action action, boolean decision) {
         for (Impact impact : action.getImpacts()) {
             switch (impact.getCaracteristic()) {
                 case "Ecology":
-                    ecologyStatus += impact.getPointsYes() + impact.getPointsNo();
+                    ecologyStatus -= decision ? impact.getPointsYes() : impact.getPointsNo();
                     break;
                 case "Economy":
-                    economyStatus += impact.getPointsYes() + impact.getPointsNo();
+                    economyStatus -= decision ? impact.getPointsYes() : impact.getPointsNo();
                     break;
                 case "Comfort":
-                    comfortStatus += impact.getPointsYes() + impact.getPointsNo();
+                    comfortStatus -= decision ? impact.getPointsYes() : impact.getPointsNo();
                     break;
                 default:
                     break;
+            }
+            if (economyStatus < 0 || ecologyStatus < 0 || comfortStatus < 0) {
+                ecologyStatus = 100;
+                economyStatus = 100;
+                comfortStatus = 100;
             }
         }
         this.invalidate();

@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void answerAction(TextView questionContainer, Action action, boolean response){
         answers.add(new Answer(action, response));
-        mainView.updateStatus(action);
+        mainView.updateStatus(action, response);
         nextAction();
         if(currentPosition < actions.size())
             questionContainer.setText(getCurrentAction().getContent());
@@ -76,6 +76,8 @@ public class MainActivity extends AppCompatActivity {
         return currentAction;
     }
     public void nextAction() {
-        currentPosition++;
+        if (currentPosition < actions.size()) {
+            currentPosition++;
+        }
     }
 }

@@ -4,18 +4,18 @@
       "Content": "Acheter de la cara en cannette ?",
       "Impacts": [
         {
-          "PointsYes": -1,
+          "PointsYes": -50,
           "PointsNo": 0,
           "Caracteristic": "Economy"
         },
         {
-          "PointsYes": -1,
+          "PointsYes": -10,
           "PointsNo": 0,
           "Caracteristic": "Comfort"
         },
         {
-          "PointsYes": -1,
-          "PointsNo": 1,
+          "PointsYes": -10,
+          "PointsNo": 10,
           "Caracteristic": "Ecology"
         }
       ]
@@ -31,6 +31,81 @@
         {
           "PointsYes":-2,
           "PointsNo": 2,
+          "Caracteristic": "Ecology"
+        }
+      ]
+    },
+    {
+      "Content": "Test2",
+      "Impacts": [
+        {
+          "PointsYes": -20,
+          "PointsNo": 0,
+          "Caracteristic": "Economy"
+        },
+        {
+          "PointsYes":-20,
+          "PointsNo": 20,
+          "Caracteristic": "Ecology"
+        }
+      ]
+    },
+    {
+      "Content": "Test3",
+      "Impacts": [
+        {
+          "PointsYes": -2,
+          "PointsNo": 0,
+          "Caracteristic": "Economy"
+        },
+        {
+          "PointsYes":-2,
+          "PointsNo": 2,
+          "Caracteristic": "Ecology"
+        }
+      ]
+    },
+    {
+      "Content": "Test4",
+      "Impacts": [
+        {
+          "PointsYes": -20,
+          "PointsNo": 0,
+          "Caracteristic": "Economy"
+        },
+        {
+          "PointsYes":-20,
+          "PointsNo": 20,
+          "Caracteristic": "Ecology"
+        }
+      ]
+    },
+    {
+      "Content": "Test5",
+      "Impacts": [
+        {
+          "PointsYes": -20,
+          "PointsNo": 0,
+          "Caracteristic": "Economy"
+        },
+        {
+          "PointsYes":-20,
+          "PointsNo": 20,
+          "Caracteristic": "Ecology"
+        }
+      ]
+    },
+    {
+      "Content": "Test6",
+      "Impacts": [
+        {
+          "PointsYes": -20,
+          "PointsNo": 0,
+          "Caracteristic": "Economy"
+        },
+        {
+          "PointsYes":-20,
+          "PointsNo": 20,
           "Caracteristic": "Ecology"
         }
       ]
