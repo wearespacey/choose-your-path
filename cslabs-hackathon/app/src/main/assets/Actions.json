@@ -5,17 +5,17 @@
       "Category": "Food",
       "Impacts": [
         {
-          "PointsYes": -5,
+          "PointsYes": -7,
           "PointsNo": 0,
           "Caracteristic": "Economy"
         },
         {
-          "PointsYes": -5,
+          "PointsYes": -7,
           "PointsNo": 0,
           "Caracteristic": "Comfort"
         },
         {
-          "PointsYes": -5,
+          "PointsYes": -7,
           "PointsNo": 5,
           "Caracteristic": "Ecology"
         }
@@ -26,12 +26,12 @@
       "Category": "Biodiversity",
       "Impacts": [
         {
-          "PointsYes": -5,
+          "PointsYes": -7,
           "PointsNo": 0,
           "Caracteristic": "Economy"
         },
         {
-          "PointsYes":-5,
+          "PointsYes":-7,
           "PointsNo": 5,
           "Caracteristic": "Ecology"
         }
@@ -42,12 +42,12 @@
       "Category": "Food",
       "Impacts": [
         {
-          "PointsYes": -5,
+          "PointsYes": -7,
           "PointsNo": 5,
           "Caracteristic": "Economy"
         },
         {
-          "PointsYes":-5,
+          "PointsYes":-7,
           "PointsNo": 5,
           "Caracteristic": "Ecology"
         },
@@ -63,12 +63,12 @@
       "Category": "Food",
       "Impacts": [
         {
-          "PointsYes": -5,
-          "PointsNo": -5,
+          "PointsYes": -7,
+          "PointsNo": -7,
           "Caracteristic": "Ecology"
         },
         {
-          "PointsYes":-5,
+          "PointsYes":-7,
           "PointsNo": 5,
           "Caracteristic": "Economy"
         },
@@ -85,12 +85,12 @@
       "Impacts": [
         {
           "PointsYes": 5,
-          "PointsNo": -5,
+          "PointsNo": -7,
           "Caracteristic": "Ecology"
         },
         {
-          "PointsYes":-5,
-          "PointsNo": -5,
+          "PointsYes":-7,
+          "PointsNo": -7,
           "Caracteristic": "Economy"
         },
         {
@@ -106,16 +106,16 @@
       "Impacts": [
         {
           "PointsYes": 5,
-          "PointsNo": -5,
+          "PointsNo": -7,
           "Caracteristic": "Ecology"
         },
         {
           "PointsYes":5,
-          "PointsNo": -5,
+          "PointsNo": -7,
           "Caracteristic": "Economy"
         },
         {
-          "PointsYes":-5,
+          "PointsYes":-7,
           "PointsNo": 5,
           "Caracteristic": "Comfort"
         }
@@ -127,12 +127,12 @@
       "Impacts": [
         {
           "PointsYes": 5,
-          "PointsNo": -5,
+          "PointsNo": -7,
           "Caracteristic": "Ecology"
         },
         {
           "PointsYes":5,
-          "PointsNo": -5,
+          "PointsNo": -7,
           "Caracteristic": "Economy"
         },
         {
@@ -147,7 +147,7 @@
       "Category": "Clothe",
       "Impacts": [
         {
-          "PointsYes": -5,
+          "PointsYes": -7,
           "PointsNo": 5,
           "Caracteristic": "Ecology"
         },
@@ -158,7 +158,7 @@
         },
         {
           "PointsYes":5,
-          "PointsNo": -5,
+          "PointsNo": -7,
           "Caracteristic": "Comfort"
         }
       ]
@@ -168,7 +168,7 @@
       "Category": "Clothe",
       "Impacts": [
         {
-          "PointsYes": -5,
+          "PointsYes": -7,
           "PointsNo": 5,
           "Caracteristic": "Ecology"
         },
@@ -178,7 +178,7 @@
           "Caracteristic": "Economy"
         },
         {
-          "PointsYes":-5,
+          "PointsYes":-7,
           "PointsNo": 5,
           "Caracteristic": "Comfort"
         }
@@ -189,13 +189,13 @@
       "Category": "Food",
       "Impacts": [
         {
-          "PointsYes": -5,
+          "PointsYes": -7,
           "PointsNo": 5,
           "Caracteristic": "Ecology"
         },
         {
           "PointsYes":5,
-          "PointsNo": -5,
+          "PointsNo": -7,
           "Caracteristic": "Economy"
         },
         {
@@ -211,16 +211,16 @@
       "Impacts": [
         {
           "PointsYes": 5,
-          "PointsNo": -5,
+          "PointsNo": -7,
           "Caracteristic": "Ecology"
         },
         {
           "PointsYes":5,
-          "PointsNo": -5,
+          "PointsNo": -7,
           "Caracteristic": "Economy"
         },
         {
-          "PointsYes":-5,
+          "PointsYes":-7,
           "PointsNo": 5,
           "Caracteristic": "Comfort"
         }
@@ -231,18 +231,18 @@
       "Category": "Transport",
       "Impacts": [
         {
-          "PointsYes": -5,
+          "PointsYes": -7,
           "PointsNo": 5,
           "Caracteristic": "Ecology"
         },
         {
-          "PointsYes":-5,
+          "PointsYes":-7,
           "PointsNo": 5,
           "Caracteristic": "Economy"
         },
         {
           "PointsYes":5,
-          "PointsNo": -5,
+          "PointsNo": -7,
           "Caracteristic": "Comfort"
         }
       ]
@@ -253,17 +253,17 @@
       "Impacts": [
         {
           "PointsYes": 5,
-          "PointsNo": -5,
+          "PointsNo": -7,
           "Caracteristic": "Ecology"
         },
         {
           "PointsYes":5,
-          "PointsNo": -5,
+          "PointsNo": -7,
           "Caracteristic": "Economy"
         },
         {
           "PointsYes":5,
-          "PointsNo": -5,
+          "PointsNo": -7,
           "Caracteristic": "Comfort"
         }
       ]
@@ -273,18 +273,18 @@
       "Category": "Transport",
       "Impacts": [
         {
-          "PointsYes": -5,
+          "PointsYes": -7,
           "PointsNo": 5,
           "Caracteristic": "Ecology"
         },
         {
-          "PointsYes": -5,
+          "PointsYes": -7,
           "PointsNo": 5,
           "Caracteristic": "Economy"
         },
         {
           "PointsYes":5,
-          "PointsNo": -5,
+          "PointsNo": -7,
           "Caracteristic": "Comfort"
         }
       ]
@@ -294,7 +294,7 @@
       "Category": "Biodiversity",
       "Impacts": [
         {
-          "PointsYes": -5,
+          "PointsYes": -7,
           "PointsNo": 5,
           "Caracteristic": "Ecology"
         },
@@ -315,9 +315,9 @@
       "Category": "Food",
       "Impacts": [
         {
-          "PointsYes": -5,
+          "PointsYes": -7,
           "PointsNo": 5,
-          "Caractersitic": "Ecology"
+          "Caracteristic": "Ecology"
         },
         {
           "PointsYes": 5,
@@ -337,17 +337,17 @@
       "Impacts": [
         {
           "PointsYes": 5,
-          "PointsNo": -5,
-          "Caractersitic": "Ecology"
+          "PointsNo": -7,
+          "Caracteristic": "Ecology"
         },
         {
-          "PointsYes": -5,
+          "PointsYes": -7,
           "PointsNo": 5,
           "Caracteristic": "Economy"
         },
         {
           "PointsYes": 5,
-          "PointsNo": -5,
+          "PointsNo": -7,
           "Caracteristic": "Comfort"
         }
       ]
@@ -358,16 +358,16 @@
       "Impacts": [
         {
           "PointsYes": 5,
-          "PointsNo": -5,
-          "Caractersitic": "Ecology"
+          "PointsNo": -7,
+          "Caracteristic": "Ecology"
         },
         {
-          "PointsYes": -5,
+          "PointsYes": -7,
           "PointsNo": 5,
           "Caracteristic": "Economy"
         },
         {
-          "PointsYes": -5,
+          "PointsYes": -7,
           "PointsNo": 5,
           "Caracteristic": "Comfort"
         }
@@ -380,16 +380,16 @@
         {
           "PointsYes": 5,
           "PointsNo": 0,
-          "Caractersitic": "Ecology"
+          "Caracteristic": "Ecology"
         },
         {
-          "PointsYes": -5,
+          "PointsYes": -7,
           "PointsNo": 5,
           "Caracteristic": "Economy"
         },
         {
           "PointsYes": 5,
-          "PointsNo": -5,
+          "PointsNo": -7,
           "Caracteristic": "Comfort"
         }
       ]
@@ -399,18 +399,18 @@
       "Category": "Transport",
       "Impacts": [
         {
-          "PointsYes": -5,
+          "PointsYes": -7,
           "PointsNo": 5,
-          "Caractersitic": "Ecology"
+          "Caracteristic": "Ecology"
         },
         {
-          "PointsYes": -5,
-          "PointsNo": -5,
+          "PointsYes": -7,
+          "PointsNo": -7,
           "Caracteristic": "Economy"
         },
         {
           "PointsYes": 5,
-          "PointsNo": -5,
+          "PointsNo": -7,
           "Caracteristic": "Comfort"
         }
       ]
@@ -420,18 +420,18 @@
       "Category": "Transport",
       "Impacts": [
         {
-          "PointsYes": -5,
+          "PointsYes": -7,
           "PointsNo": 0,
-          "Caractersitic": "Ecology"
+          "Caracteristic": "Ecology"
         },
         {
           "PointsYes": 0,
-          "PointsNo": -5,
+          "PointsNo": -7,
           "Caracteristic": "Economy"
         },
         {
           "PointsYes": 5,
-          "PointsNo": -5,
+          "PointsNo": -7,
           "Caracteristic": "Comfort"
         }
       ]
@@ -442,11 +442,11 @@
       "Impacts": [
         {
           "PointsYes": 5,
-          "PointsNo": -5,
-          "Caractersitic": "Ecology"
+          "PointsNo": -7,
+          "Caracteristic": "Ecology"
         },
         {
-          "PointsYes": -5,
+          "PointsYes": -7,
           "PointsNo": 0,
           "Caracteristic": "Economy"
         },
@@ -462,9 +462,9 @@
       "Category": "Biodiversity",
       "Impacts": [
         {
-          "PointsYes": -5,
+          "PointsYes": -7,
           "PointsNo": 0,
-          "Caractersitic": "Ecology"
+          "Caracteristic": "Ecology"
         },
         {
           "PointsYes": 5,
@@ -485,16 +485,16 @@
         {
           "PointsYes": 0,
           "PointsNo": 5,
-          "Caractersitic": "Ecology"
+          "Caracteristic": "Ecology"
         },
         {
           "PointsYes": 0,
-          "PointsNo": -5,
+          "PointsNo": -7,
           "Caracteristic": "Economy"
         },
         {
           "PointsYes": 0,
-          "PointsNo": -5,
+          "PointsNo": -7,
           "Caracteristic": "Comfort"
         }
       ]
@@ -504,13 +504,13 @@
       "Category": "Biodiversity",
       "Impacts": [
         {
-          "PointsYes": -5,
+          "PointsYes": -7,
           "PointsNo": 0,
-          "Caractersitic": "Ecology"
+          "Caracteristic": "Ecology"
         },
         {
-          "PointsYes": -5,
-          "PointsNo": -5,
+          "PointsYes": -7,
+          "PointsNo": -7,
           "Caracteristic": "Economy"
         },
         {
@@ -525,13 +525,13 @@
       "Category": "Transport",
       "Impacts": [
         {
-          "PointsYes": -5,
+          "PointsYes": -7,
           "PointsNo": 0,
-          "Caractersitic": "Ecology"
+          "Caracteristic": "Ecology"
         },
         {
-          "PointsYes": -5,
-          "PointsNo": -5,
+          "PointsYes": -7,
+          "PointsNo": -7,
           "Caracteristic": "Economy"
         },
         {
@@ -546,13 +546,13 @@
       "Category": "Transport",
       "Impacts": [
         {
-          "PointsYes": -5,
+          "PointsYes": -7,
           "PointsNo": 0,
-          "Caractersitic": "Ecology"
+          "Caracteristic": "Ecology"
         },
         {
-          "PointsYes": -5,
-          "PointsNo": -5,
+          "PointsYes": -7,
+          "PointsNo": -7,
           "Caracteristic": "Economy"
         },
         {
