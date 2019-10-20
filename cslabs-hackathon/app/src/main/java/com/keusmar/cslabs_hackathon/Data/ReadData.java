@@ -34,6 +34,7 @@ public class ReadData {
                 currentAction = new Action();
                 currentAction.setContent(jArray.getJSONObject(i).getString("Content"));
                 JSONArray impacts = jArray.getJSONObject(i).getJSONArray("Impacts");
+                currentAction.setCategory(jArray.getJSONObject(i).getString("Category"));
                 for(int u = 0; u < impacts.length(); u++){
                     currentImpact = new Impact();
                     currentImpact.setCaracteristic(impacts.getJSONObject(u).getString("Caracteristic"));

@@ -2,6 +2,7 @@
   "Actions": [
     {
       "Content": "Acheter de la cara en cannette ?",
+      "Category": "Food",
       "Impacts": [
         {
           "PointsYes": -5,
@@ -22,6 +23,7 @@
     },
     {
       "Content": "Laisser la lumière allumée quand on quitte une pièce",
+      "Category": "Biodiversity",
       "Impacts": [
         {
           "PointsYes": -5,
@@ -37,6 +39,7 @@
     },
     {
       "Content": "Un ananas apparait, ça serait rafraichissant en été, tu le prends?",
+      "Category": "Food",
       "Impacts": [
         {
           "PointsYes": -5,
@@ -57,6 +60,7 @@
     },
     {
       "Content": "(En été) Tu manges tes restes de carottes? Ou non tu préfères le resto ?",
+      "Category": "Food",
       "Impacts": [
         {
           "PointsYes": -5,
@@ -77,6 +81,7 @@
     },
     {
       "Content": "(!alerte soif!) Acheter une gourde ? Non acheter au distributeur",
+      "Category": "Food",
       "Impacts": [
         {
           "PointsYes": 5,
@@ -97,6 +102,7 @@
     },
     {
       "Content": "Est-tu prêt à réduire ta consomation de viande à 2x par semaine?",
+      "Category": "Food",
       "Impacts": [
         {
           "PointsYes": 5,
@@ -117,6 +123,7 @@
     },
     {
       "Content": "Tu découvres qu'on peut maintenant manger des insectes, tu tentes?",
+      "Category": "Food",
       "Impacts": [
         {
           "PointsYes": 5,
@@ -137,6 +144,7 @@
     },
     {
       "Content": "La veste ExtraDry est en promo. Quelle affaire ! Tu l'achètes ou pas?",
+      "Category": "Clothe",
       "Impacts": [
         {
           "PointsYes": -5,
@@ -157,6 +165,7 @@
     },
     {
       "Content": "Tu as enfin fait le tri dans ta garde-robe. Tu les donnes à une oeuvre de charité ?  Ou non à la poubelle",
+      "Category": "Clothe",
       "Impacts": [
         {
           "PointsYes": -5,
@@ -177,6 +186,7 @@
     },
     {
       "Content": "Promo sur les Snackers 10 paquets de 1, c'est moins cher que 1 paquet de 10 ! Tu prends?",
+      "Category": "Food",
       "Impacts": [
         {
           "PointsYes": -5,
@@ -197,6 +207,7 @@
     },
     {
       "Content": "Oh un bébé ! Il te propose une couche réutilisable ou un usage unique. Tu laverais une couche?",
+      "Category": "",
       "Impacts": [
         {
           "PointsYes": 5,
