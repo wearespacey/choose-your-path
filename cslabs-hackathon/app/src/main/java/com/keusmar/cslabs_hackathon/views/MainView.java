@@ -11,6 +11,7 @@ import android.graphics.Typeface;
 import android.view.View;
 
 import com.keusmar.cslabs_hackathon.Activities.GameOver;
+import com.keusmar.cslabs_hackathon.Activities.MainActivity;
 import com.keusmar.cslabs_hackathon.Models.CategorieEnum;
 import com.keusmar.cslabs_hackathon.Models.Character.CharacterColor;
 import com.keusmar.cslabs_hackathon.Models.Action;
@@ -180,19 +181,23 @@ public class MainView extends View
         switch (getCurrentAction().getCategory()) {
             case BIODIVERSITY:
                 background = BitmapFactory.decodeResource(getResources(), R.drawable.bee);
-                canvas.drawBitmap(background, padding, y - (askbox.getHeight() + 10), paint);
+                padding = (x - (background.getWidth()))/2;
+                canvas.drawBitmap(background, padding, y - (askbox.getHeight() - 100), paint);
                 break;
             case FOOD:
                 background = BitmapFactory.decodeResource(getResources(), R.drawable.pineapple);
-                canvas.drawBitmap(background, padding, y - (askbox.getHeight() + 10), paint);
+                padding = (x - (background.getWidth()))/2;
+                canvas.drawBitmap(background, padding, y - (askbox.getHeight() - 100), paint);
                 break;
             case TRANSPORT:
                 background = BitmapFactory.decodeResource(getResources(), R.drawable.car);
-                canvas.drawBitmap(background, padding, y - (askbox.getHeight() + 10), paint);
+                padding = (x - (background.getWidth()))/2;
+                canvas.drawBitmap(background, padding, y - (askbox.getHeight() - 100), paint);
                 break;
             case CLOTHE:
                 background = BitmapFactory.decodeResource(getResources(), R.drawable.shirt);
-                canvas.drawBitmap(background, padding, y - (askbox.getHeight() + 10), paint);
+                padding = (x - (background.getWidth()))/2;
+                canvas.drawBitmap(background, padding, y - (askbox.getHeight() - 100), paint);
                 break;
             default:
                 break;
@@ -298,7 +303,7 @@ public class MainView extends View
     }
 
     public Action getCurrentAction() {
-        return this.actions.get(currentPosition);
+        return ((MainActivity)this.getContext()).getCurrentAction();
     }
 
     public void refresh() {
