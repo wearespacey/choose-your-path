@@ -30,7 +30,7 @@ public class ReadData {
             Action currentAction = null;
             Impact currentImpact = null;
 
-            for (int i = 0; i < jArray.length(); ++i) {
+            for (int i = 0; i < jArray.length(); i++) {
                 currentAction = new Action();
                 currentAction.setContent(jArray.getJSONObject(i).getString("Content"));
                 JSONArray impacts = jArray.getJSONObject(i).getJSONArray("Impacts");
