@@ -277,7 +277,7 @@ public class MainView extends View
 
     private void drawCloud(Canvas canvas, int x) {
         Bitmap cloud = BitmapFactory.decodeResource(getResources(), R.drawable.cloud1);
-        canvas.drawBitmap(cloud, x-scrollingBg*4,0, paint);
+        canvas.drawBitmap(cloud, x-scrollingBg,0, paint);
         if (x-scrollingBg == (-cloud.getWidth())){
             scrollingBg = 0;
         }
@@ -303,7 +303,7 @@ public class MainView extends View
 
     public void refresh() {
         this.rotation+=2;
-        scrollingBg++;
+        scrollingBg+=4;
         if (scrollingBg % 2 == 0)
             position++;
 

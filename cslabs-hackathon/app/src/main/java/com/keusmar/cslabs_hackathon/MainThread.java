@@ -18,7 +18,7 @@ public class MainThread implements Runnable {
         while (true) {
             try {
                 mainView.refresh();
-                Thread.sleep(60);
+                Thread.sleep(100);
             } catch (InterruptedException ex) {
                 ex.printStackTrace();
             }
