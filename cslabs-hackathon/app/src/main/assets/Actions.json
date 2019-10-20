@@ -477,6 +477,90 @@
           "Caracteristic": "Comfort"
         }
       ]
+    },
+    {
+      "Content": "Tu quittes une pièce en sachant que tu y retourneras dans 10 minutes. Tu éteins la lumière?",
+      "Categroy": "Biodiversity",
+      "Impacts": [
+        {
+          "PointsYes": 0,
+          "PointsNo": 5,
+          "Caractersitic": "Ecology"
+        },
+        {
+          "PointsYes": 0,
+          "PointsNo": -5,
+          "Caracteristic": "Economy"
+        },
+        {
+          "PointsYes": 0,
+          "PointsNo": -5,
+          "Caracteristic": "Comfort"
+        }
+      ]
+    },
+    {
+      "Content": "Le produit que tu veux est plus cher emballé qu'en vrac, tu le prends?",
+      "Categroy": "Biodiversity",
+      "Impacts": [
+        {
+          "PointsYes": -5,
+          "PointsNo": 0,
+          "Caractersitic": "Ecology"
+        },
+        {
+          "PointsYes": -5,
+          "PointsNo": -5,
+          "Caracteristic": "Economy"
+        },
+        {
+          "PointsYes": 0,
+          "PointsNo": 0,
+          "Caracteristic": "Comfort"
+        }
+      ]
+    },
+    {
+      "Content": "Des trottinettes électriques débarquent. Un bon moyen d'aller au boulot comparé à la marche?",
+      "Categroy": "Transport",
+      "Impacts": [
+        {
+          "PointsYes": -5,
+          "PointsNo": 0,
+          "Caractersitic": "Ecology"
+        },
+        {
+          "PointsYes": -5,
+          "PointsNo": -5,
+          "Caracteristic": "Economy"
+        },
+        {
+          "PointsYes": 0,
+          "PointsNo": 0,
+          "Caracteristic": "Comfort"
+        }
+      ]
+    },
+    {
+      "Content": "Des trottinettes électriques débarquent. Un bon moyen d'aller au boulot comparé à la marche?",
+      "Categroy": "Transport",
+      "Impacts": [
+        {
+          "PointsYes": -5,
+          "PointsNo": 0,
+          "Caractersitic": "Ecology"
+        },
+        {
+          "PointsYes": -5,
+          "PointsNo": -5,
+          "Caracteristic": "Economy"
+        },
+        {
+          "PointsYes": 0,
+          "PointsNo": 0,
+          "Caracteristic": "Comfort"
+        }
+      ]
     }
   ]
 }
