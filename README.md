@@ -40,7 +40,6 @@
 
 * [About the Project](#about-the-project)
   * [Built With](#built-with)
-* [Contributing](#contributing)
 * [License](#license)
 
 
@@ -59,19 +58,6 @@ This application has also won the first price for the technical aspect which mak
 ### Built With
 You will find herebelow the frameworks and dependencies used by this solution:
 * [Java](https://java.com/) with [Android Studio](https://developer.android.com/studio/)
-
-
-<!-- CONTRIBUTING -->
-## Contributing
-
-Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated** as long as they served the purpose of this repository : build a general back-end solution customizable for any project.
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push the Branch to Remote (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request from your Feature Branch to this project Develop Branch
-
 
 
 <!-- LICENSE -->
