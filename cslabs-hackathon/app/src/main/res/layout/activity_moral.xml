@@ -20,8 +20,8 @@
 
     <ImageView
         android:id="@+id/moral"
-        android:layout_width="297dp"
-        android:layout_height="465dp"
+        android:layout_width="307dp"
+        android:layout_height="486dp"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
