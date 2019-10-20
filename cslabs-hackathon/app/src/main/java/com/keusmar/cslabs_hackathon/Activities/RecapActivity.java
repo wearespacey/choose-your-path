@@ -1,10 +1,11 @@
-package com.keusmar.cslabs_hackathon;
+package com.keusmar.cslabs_hackathon.Activities;
 
 import android.app.ListActivity;
 import android.os.Bundle;
 import com.keusmar.cslabs_hackathon.Data.GameImpactData;
 import com.keusmar.cslabs_hackathon.Models.ActionRecapAdapter;
 import com.keusmar.cslabs_hackathon.Models.Answer;
+import com.keusmar.cslabs_hackathon.R;
 
 import java.util.ArrayList;
 

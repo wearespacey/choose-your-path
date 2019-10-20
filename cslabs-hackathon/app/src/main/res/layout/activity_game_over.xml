@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#D3BF8F"
-    tools:context=".GameOver">
+    tools:context=".Activities.GameOver">
 
     <Button
         android:id="@+id/getinfo"

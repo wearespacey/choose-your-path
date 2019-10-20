@@ -1,4 +1,4 @@
-package com.keusmar.cslabs_hackathon;
+package com.keusmar.cslabs_hackathon.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,6 +7,10 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.keusmar.cslabs_hackathon.Models.Character;
+import com.keusmar.cslabs_hackathon.R;
+
 import java.util.ArrayList;
 
 public class ChooseCharacterActivity extends AppCompatActivity {

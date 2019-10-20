@@ -1,9 +1,9 @@
-package com.keusmar.cslabs_hackathon;
+package com.keusmar.cslabs_hackathon.Models;
 
 import java.io.Serializable;
 
 public class Character implements Serializable {
-    enum CharacterColor{
+    public enum CharacterColor{
         ALIEN_BEIGE,
         ALIEN_BLUE,
         ALIEN_GREEN,

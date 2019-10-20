@@ -1,8 +1,6 @@
-package com.keusmar.cslabs_hackathon;
+package com.keusmar.cslabs_hackathon.views;
 
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -10,17 +8,16 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Typeface;
-import android.graphics.drawable.Drawable;
 import android.view.View;
 
-import com.keusmar.cslabs_hackathon.Character.CharacterColor;
+import com.keusmar.cslabs_hackathon.Activities.GameOver;
+import com.keusmar.cslabs_hackathon.Models.Character.CharacterColor;
 import com.keusmar.cslabs_hackathon.Models.Action;
 import com.keusmar.cslabs_hackathon.Models.Impact;
+import com.keusmar.cslabs_hackathon.R;
 
 import java.util.ArrayList;
 import java.util.Random;
-
-import static com.keusmar.cslabs_hackathon.Character.CharacterColor.*;
 
 
 public class MainView extends View
@@ -135,11 +132,9 @@ public class MainView extends View
         dawCharacter(canvas, x, y);
         drawAskBox(canvas, x, y);
         drawThermometer(canvas, x, y);
-//        drawChoiceBtns(canvas, x, y);
         Action currentAction = getCurrentAction();
         paint.setColor(Color.BLACK);
         paint.setTextSize(80);
-//        canvas.drawText(currentAction.getContent(), 50, y - 500, paint);
     }
 
 

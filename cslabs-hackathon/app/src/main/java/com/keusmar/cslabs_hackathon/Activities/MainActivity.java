@@ -1,4 +1,4 @@
-package com.keusmar.cslabs_hackathon;
+package com.keusmar.cslabs_hackathon.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,10 +8,15 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.keusmar.cslabs_hackathon.Models.Character;
 import com.keusmar.cslabs_hackathon.Data.GameImpactData;
 import com.keusmar.cslabs_hackathon.Data.ReadData;
+import com.keusmar.cslabs_hackathon.MainThread;
+import com.keusmar.cslabs_hackathon.views.MainView;
 import com.keusmar.cslabs_hackathon.Models.Action;
 import com.keusmar.cslabs_hackathon.Models.Answer;
+import com.keusmar.cslabs_hackathon.R;
 
 import java.util.ArrayList;
 

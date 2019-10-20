@@ -50,7 +50,7 @@
         android:layout_marginTop="50dp"
         android:layout_marginEnd="80dp"
         android:background="@drawable/rounded_button"
-        android:text="Select character"
+        android:text="Choisir ce personnage"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

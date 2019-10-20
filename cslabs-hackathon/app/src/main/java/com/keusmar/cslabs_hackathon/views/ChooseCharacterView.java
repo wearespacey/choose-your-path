@@ -1,4 +1,4 @@
-package com.keusmar.cslabs_hackathon;
+package com.keusmar.cslabs_hackathon.views;
 
 import android.content.Context;
 import android.view.View;

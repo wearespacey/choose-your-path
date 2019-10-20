@@ -1,4 +1,4 @@
-package com.keusmar.cslabs_hackathon;
+package com.keusmar.cslabs_hackathon.Models;
 import java.io.Serializable;
 
 public class CategorieEnum implements Serializable {

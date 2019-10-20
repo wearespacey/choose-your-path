@@ -9,9 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name=".GameOver"></activity>
-        <activity android:name=".MainActivity"></activity>
-        <activity android:name=".ChooseCharacterActivity">
+        <activity android:name=".Activities.GameOver"></activity>
+        <activity android:name=".Activities.MainActivity"></activity>
+        <activity android:name=".Activities.ChooseCharacterActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -19,7 +19,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".RecapActivity"
+            android:name=".Activities.RecapActivity"
             android:screenOrientation="portrait" />
     </application>
 
