@@ -2,6 +2,7 @@
   "Actions": [
     {
       "Content": "Acheter de la cara en cannette ?",
+      "Category": "Food",
       "Impacts": [
         {
           "PointsYes": -5,
@@ -22,6 +23,7 @@
     },
     {
       "Content": "Laisser la lumière allumée quand on quitte une pièce",
+      "Category": "Biodiversity",
       "Impacts": [
         {
           "PointsYes": -5,
@@ -37,6 +39,7 @@
     },
     {
       "Content": "Un ananas apparait, ça serait rafraichissant en été, tu le prends?",
+      "Category": "Food",
       "Impacts": [
         {
           "PointsYes": -5,
@@ -57,6 +60,7 @@
     },
     {
       "Content": "(En été) Tu manges tes restes de carottes? Ou non tu préfères le resto ?",
+      "Category": "Food",
       "Impacts": [
         {
           "PointsYes": -5,
@@ -77,6 +81,7 @@
     },
     {
       "Content": "(!alerte soif!) Acheter une gourde ? Non acheter au distributeur",
+      "Category": "Food",
       "Impacts": [
         {
           "PointsYes": 5,
@@ -97,6 +102,7 @@
     },
     {
       "Content": "Est-tu prêt à réduire ta consomation de viande à 2x par semaine?",
+      "Category": "Food",
       "Impacts": [
         {
           "PointsYes": 5,
@@ -117,6 +123,7 @@
     },
     {
       "Content": "Tu découvres qu'on peut maintenant manger des insectes, tu tentes?",
+      "Category": "Food",
       "Impacts": [
         {
           "PointsYes": 5,
@@ -137,6 +144,7 @@
     },
     {
       "Content": "La veste ExtraDry est en promo. Quelle affaire ! Tu l'achètes ou pas?",
+      "Category": "Clothe",
       "Impacts": [
         {
           "PointsYes": -5,
@@ -157,6 +165,7 @@
     },
     {
       "Content": "Tu as enfin fait le tri dans ta garde-robe. Tu les donnes à une oeuvre de charité ?  Ou non à la poubelle",
+      "Category": "Clothe",
       "Impacts": [
         {
           "PointsYes": -5,
@@ -177,6 +186,7 @@
     },
     {
       "Content": "Promo sur les Snackers 10 paquets de 1, c'est moins cher que 1 paquet de 10 ! Tu prends?",
+      "Category": "Food",
       "Impacts": [
         {
           "PointsYes": -5,
@@ -197,6 +207,7 @@
     },
     {
       "Content": "Oh un bébé ! Il te propose une couche réutilisable ou un usage unique. Tu laverais une couche?",
+      "Category": "Biodiversity",
       "Impacts": [
         {
           "PointsYes": 5,
@@ -217,6 +228,7 @@
     },
     {
       "Content": "Ton frère te demande d'aller le chercher à la gare en voiture parce qu'il ne veut pas marcher 15 minutes. T'y vas ou pas?",
+      "Category": "Transport",
       "Impacts": [
         {
           "PointsYes": -5,
@@ -237,6 +249,7 @@
     },
     {
       "Content": "Ton co-voiturage t'a laché juste avant le boulot. Tu prends ta voiture ou tu prends le bus?",
+      "Category": "Transport",
       "Impacts": [
         {
           "PointsYes": 5,
@@ -257,6 +270,7 @@
     },
     {
       "Content": "Il pleut, ton boulot est à 4 minutes en voiture, mais 15 en vélo. Tu prends la voiture?",
+      "Category": "Transport",
       "Impacts": [
         {
           "PointsYes": -5,
@@ -277,6 +291,7 @@
     },
     {
       "Content": "Ca y est, tu as enfin attrapé cette abeille qui t'ennuie depuis deux heures. Tu la tues?",
+      "Category": "Biodiversity",
       "Impacts": [
         {
           "PointsYes": -5,
@@ -290,6 +305,174 @@
         },
         {
           "PointsYes": 0,
+          "PointsNo": 0,
+          "Caracteristic": "Comfort"
+        }
+      ]
+    },
+    {
+      "Content": "Une envie de fruit te vient! Dans le frigo, il y a une banane. Tu la prends ou non tu veux les fraises derrière?",
+      "Categroy": "Food",
+      "Impacts": [
+        {
+          "PointsYes": -5,
+          "PointsNo": 5,
+          "Caractersitic": "Ecology"
+        },
+        {
+          "PointsYes": 5,
+          "PointsNo": 5,
+          "Caracteristic": "Economy"
+        },
+        {
+          "PointsYes": 5,
+          "PointsNo": 5,
+          "Caracteristic": "Comfort"
+        }
+      ]
+    },
+    {
+      "Content": "Tu utilises une boîte à tartine?",
+      "Categroy": "Food",
+      "Impacts": [
+        {
+          "PointsYes": 5,
+          "PointsNo": -5,
+          "Caractersitic": "Ecology"
+        },
+        {
+          "PointsYes": -5,
+          "PointsNo": 5,
+          "Caracteristic": "Economy"
+        },
+        {
+          "PointsYes": 5,
+          "PointsNo": -5,
+          "Caracteristic": "Comfort"
+        }
+      ]
+    },
+    {
+      "Content": "Tu connais les magasins en vrac?",
+      "Categroy": "Biodiversity",
+      "Impacts": [
+        {
+          "PointsYes": 5,
+          "PointsNo": -5,
+          "Caractersitic": "Ecology"
+        },
+        {
+          "PointsYes": -5,
+          "PointsNo": 5,
+          "Caracteristic": "Economy"
+        },
+        {
+          "PointsYes": -5,
+          "PointsNo": 5,
+          "Caracteristic": "Comfort"
+        }
+      ]
+    },
+    {
+      "Content": "Tu trouves un billet à terre. Tu achètes un cookie ou pas?",
+      "Categroy": "Food",
+      "Impacts": [
+        {
+          "PointsYes": 5,
+          "PointsNo": 0,
+          "Caractersitic": "Ecology"
+        },
+        {
+          "PointsYes": -5,
+          "PointsNo": 5,
+          "Caracteristic": "Economy"
+        },
+        {
+          "PointsYes": 5,
+          "PointsNo": -5,
+          "Caracteristic": "Comfort"
+        }
+      ]
+    },
+    {
+      "Content": "Pour rendre visite à ta grand-mère tu prends l'avion? Sachant que c'est à 15h de train ",
+      "Categroy": "Transport",
+      "Impacts": [
+        {
+          "PointsYes": -5,
+          "PointsNo": 5,
+          "Caractersitic": "Ecology"
+        },
+        {
+          "PointsYes": -5,
+          "PointsNo": -5,
+          "Caracteristic": "Economy"
+        },
+        {
+          "PointsYes": 5,
+          "PointsNo": -5,
+          "Caracteristic": "Comfort"
+        }
+      ]
+    },
+    {
+      "Content": "Ta boulangerie préférée déménage dans une autre ville. Tu continues d'y aller en voiture?",
+      "Categroy": "Transport",
+      "Impacts": [
+        {
+          "PointsYes": -5,
+          "PointsNo": 0,
+          "Caractersitic": "Ecology"
+        },
+        {
+          "PointsYes": 0,
+          "PointsNo": -5,
+          "Caracteristic": "Economy"
+        },
+        {
+          "PointsYes": 5,
+          "PointsNo": -5,
+          "Caracteristic": "Comfort"
+        }
+      ]
+    },
+    {
+      "Content": "Ce magasin vends des graines pour faire pousser tes tomates chez toi! Tu achètes?",
+      "Categroy": "Biodiversity",
+      "Impacts": [
+        {
+          "PointsYes": 5,
+          "PointsNo": -5,
+          "Caractersitic": "Ecology"
+        },
+        {
+          "PointsYes": -5,
+          "PointsNo": 0,
+          "Caracteristic": "Economy"
+        },
+        {
+          "PointsYes": 5,
+          "PointsNo": 0,
+          "Caracteristic": "Comfort"
+        }
+      ]
+    },
+    {
+      "Content": "Tu vois un billet de 10€ derrière les fleurs, tu marches dessus pour le prendre?",
+      "Categroy": "Biodiversity",
+      "Impacts": [
+        {
+          "PointsYes": -5,
+          "PointsNo": 0,
+          "Caractersitic": "Ecology"
+        },
+        {
+          "PointsYes": 5,
+          "PointsNo": 0,
+          "Caracteristic": "Economy"
+        },
+        {
+          "PointsYes": 5,
           "PointsNo": 0,
           "Caracteristic": "Comfort"
         }

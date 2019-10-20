@@ -11,6 +11,8 @@ import android.graphics.Typeface;
 import android.view.View;
 
 import com.keusmar.cslabs_hackathon.Activities.GameOver;
+import com.keusmar.cslabs_hackathon.Activities.MainActivity;
+import com.keusmar.cslabs_hackathon.Models.CategorieEnum;
 import com.keusmar.cslabs_hackathon.Models.Character.CharacterColor;
 import com.keusmar.cslabs_hackathon.Models.Action;
 import com.keusmar.cslabs_hackathon.Models.Impact;
@@ -174,27 +176,32 @@ public class MainView extends View
         Bitmap askbox = BitmapFactory.decodeResource(getResources(), R.drawable.ask_box);
         float padding = (x - (askbox.getWidth()))/2;
         canvas.drawBitmap(askbox, padding, y - (askbox.getHeight() + 10), paint);
-//        Bitmap background;
-//        switch (getCurrentAction().getCategory()) {
-//            case CategorieEnum.CategorieEnumType.BIODIVERSITY:
-//                background = BitmapFactory.decodeResource(getResources(), R.drawable.bee);
-//                canvas.drawBitmap(background, padding, y - (askbox.getHeight() + 10), paint);
-//                break;
-//            case CategorieEnum.CategorieEnumType.FOOD:
-//                background = BitmapFactory.decodeResource(getResources(), R.drawable.pineapple);
-//                canvas.drawBitmap(background, padding, y - (askbox.getHeight() + 10), paint);
-//                break;
-//            case CategorieEnum.CategorieEnumType.TRANSPORT:
-//                background = BitmapFactory.decodeResource(getResources(), R.drawable.car);
-//                canvas.drawBitmap(background, padding, y - (askbox.getHeight() + 10), paint);
-//                break;
-//            case CategorieEnum.CategorieEnumType.CLOTHE:
-//                background = BitmapFactory.decodeResource(getResources(), R.drawable.shirt);
-//                canvas.drawBitmap(background, padding, y - (askbox.getHeight() + 10), paint);
-//                break;
-//            default:
-//                break;
-//        }
+        Bitmap background;
+        Action action = getCurrentAction();
+        switch (getCurrentAction().getCategory()) {
+            case BIODIVERSITY:
+                background = BitmapFactory.decodeResource(getResources(), R.drawable.bee);
+                padding = (x - (background.getWidth()))/2;
+                canvas.drawBitmap(background, padding, y - (askbox.getHeight() - 100), paint);
+                break;
+            case FOOD:
+                background = BitmapFactory.decodeResource(getResources(), R.drawable.pineapple);
+                padding = (x - (background.getWidth()))/2;
+                canvas.drawBitmap(background, padding, y - (askbox.getHeight() - 100), paint);
+                break;
+            case TRANSPORT:
+                background = BitmapFactory.decodeResource(getResources(), R.drawable.car);
+                padding = (x - (background.getWidth()))/2;
+                canvas.drawBitmap(background, padding, y - (askbox.getHeight() - 100), paint);
+                break;
+            case CLOTHE:
+                background = BitmapFactory.decodeResource(getResources(), R.drawable.shirt);
+                padding = (x - (background.getWidth()))/2;
+                canvas.drawBitmap(background, padding, y - (askbox.getHeight() - 100), paint);
+                break;
+            default:
+                break;
+        }
     }
 
     private void drawPlanet(Canvas canvas, int x, int y) {
@@ -296,7 +303,7 @@ public class MainView extends View
     }
 
     public Action getCurrentAction() {
-        return this.actions.get(currentPosition);
+        return ((MainActivity)this.getContext()).getCurrentAction();
     }
 
     public void refresh() {
