@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         mainView.setActions(actions);
         MainThread mainThread = new MainThread(mainView, this);
         Thread thread = new Thread(mainThread);
-        //thread.start();
+        thread.start();
         LinearLayout linearLayout = findViewById(R.id.yeet);
         questionContainer = findViewById(R.id.questionContainer);
         questionContainer = findViewById(R.id.questionContainer);
