@@ -30,7 +30,7 @@ public class ChooseCharacterActivity extends AppCompatActivity {
         left_arrow = findViewById(R.id.previous_character);
         right_arrow = findViewById(R.id.next_character);
         character_image = findViewById(R.id.character_image);
-        select_character = findViewById(R.id.select_character);
+        select_character = findViewById(R.id.getinfo);
 
         left_arrow.setOnClickListener(new View.OnClickListener(){
             @Override

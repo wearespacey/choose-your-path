@@ -37,6 +37,7 @@ public class MainView extends View
     private float ecologyRatio = 100;
     private float economyStatus = 100;
     private float comfortStatus = 100;
+    private float temperatureStatus = 50;
     private Integer day_number = 1;
     private int alphaValue = 0;
     private ArrayList<Bitmap> bitmaps = new ArrayList<>();;
@@ -133,6 +134,7 @@ public class MainView extends View
         
         dawCharacter(canvas, x, y);
         drawAskBox(canvas, x, y);
+        drawThermometer(canvas, x, y);
 //        drawChoiceBtns(canvas, x, y);
         Action currentAction = getCurrentAction();
         paint.setColor(Color.BLACK);
@@ -156,6 +158,16 @@ public class MainView extends View
 
     public void incrementDayNumber(){day_number++;}
 
+    private void drawThermometer(Canvas canvas, int x, int y) {
+        Bitmap thermometer = BitmapFactory.decodeResource(getResources(), R.drawable.thermometre);
+        canvas.drawBitmap(thermometer, x-thermometer.getWidth()-30, 450, paint);
+        Bitmap barRed = BitmapFactory.decodeResource(getResources(), R.drawable.barred);
+        temperatureStatus = (float) ((100 - ecologyStatus)*2);
+        Bitmap resizedBarred = Bitmap.createScaledBitmap(
+                barRed, 50, (int)(50+temperatureStatus), false);
+        canvas.drawBitmap(resizedBarred, x-thermometer.getWidth()-5, 326+thermometer.getHeight()-((int)(temperatureStatus)), paint);
+    }
+
     private void drawChoiceBtns(Canvas canvas, int x, int y) {
         Bitmap validate = BitmapFactory.decodeResource(getResources(), R.drawable.validate);
         canvas.drawBitmap(validate, 200, y-300, paint);
@@ -167,6 +179,27 @@ public class MainView extends View
         Bitmap askbox = BitmapFactory.decodeResource(getResources(), R.drawable.ask_box);
         float padding = (x - (askbox.getWidth()))/2;
         canvas.drawBitmap(askbox, padding, y - (askbox.getHeight() + 10), paint);
+//        Bitmap background;
+//        switch (getCurrentAction().getCategory()) {
+//            case CategorieEnum.CategorieEnumType.BIODIVERSITY:
+//                background = BitmapFactory.decodeResource(getResources(), R.drawable.bee);
+//                canvas.drawBitmap(background, padding, y - (askbox.getHeight() + 10), paint);
+//                break;
+//            case CategorieEnum.CategorieEnumType.FOOD:
+//                background = BitmapFactory.decodeResource(getResources(), R.drawable.pineapple);
+//                canvas.drawBitmap(background, padding, y - (askbox.getHeight() + 10), paint);
+//                break;
+//            case CategorieEnum.CategorieEnumType.TRANSPORT:
+//                background = BitmapFactory.decodeResource(getResources(), R.drawable.car);
+//                canvas.drawBitmap(background, padding, y - (askbox.getHeight() + 10), paint);
+//                break;
+//            case CategorieEnum.CategorieEnumType.CLOTHE:
+//                background = BitmapFactory.decodeResource(getResources(), R.drawable.shirt);
+//                canvas.drawBitmap(background, padding, y - (askbox.getHeight() + 10), paint);
+//                break;
+//            default:
+//                break;
+//        }
     }
 
     private void drawPlanet(Canvas canvas, int x, int y) {
@@ -272,7 +305,6 @@ public class MainView extends View
     }
 
     public void refresh() {
-
         this.rotation+=2;
         scrollingBg++;
         if (scrollingBg % 2 == 0)
@@ -306,16 +338,8 @@ public class MainView extends View
 
         this.invalidate();
         if(ecologyStatus <= 0 || economyStatus <= 0 || comfortStatus <= 0) {
-
-            AlertDialog.Builder dlg = new AlertDialog.Builder(getContext());
-            dlg.setMessage("GAME OVER\nBoi yo ded.");
-            dlg.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                public void onClick(DialogInterface dialog, int id) {
-                    getContext().startActivity(new Intent(getContext(), RecapActivity.class));
-                    dialog.cancel();
-                }
-            });
-            dlg.show();
+            Intent intent = new Intent(getContext(), GameOver.class);
+            getContext().startActivity(intent);
         }
     }
 
