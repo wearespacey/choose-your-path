@@ -312,7 +312,7 @@
     },
     {
       "Content": "Une envie de fruit te vient! Dans le frigo, il y a une banane. Tu la prends ou non tu veux les fraises derrière?",
-      "Categroy": "Food",
+      "Category": "Food",
       "Impacts": [
         {
           "PointsYes": -5,
@@ -333,7 +333,7 @@
     },
     {
       "Content": "Tu utilises une boîte à tartine?",
-      "Categroy": "Food",
+      "Category": "Food",
       "Impacts": [
         {
           "PointsYes": 5,
@@ -354,7 +354,7 @@
     },
     {
       "Content": "Tu connais les magasins en vrac?",
-      "Categroy": "Biodiversity",
+      "Category": "Biodiversity",
       "Impacts": [
         {
           "PointsYes": 5,
@@ -375,7 +375,7 @@
     },
     {
       "Content": "Tu trouves un billet à terre. Tu achètes un cookie ou pas?",
-      "Categroy": "Food",
+      "Category": "Food",
       "Impacts": [
         {
           "PointsYes": 5,
@@ -396,7 +396,7 @@
     },
     {
       "Content": "Pour rendre visite à ta grand-mère tu prends l'avion? Sachant que c'est à 15h de train ",
-      "Categroy": "Transport",
+      "Category": "Transport",
       "Impacts": [
         {
           "PointsYes": -5,
@@ -417,7 +417,7 @@
     },
     {
       "Content": "Ta boulangerie préférée déménage dans une autre ville. Tu continues d'y aller en voiture?",
-      "Categroy": "Transport",
+      "Category": "Transport",
       "Impacts": [
         {
           "PointsYes": -5,
@@ -438,7 +438,7 @@
     },
     {
       "Content": "Ce magasin vends des graines pour faire pousser tes tomates chez toi! Tu achètes?",
-      "Categroy": "Biodiversity",
+      "Category": "Biodiversity",
       "Impacts": [
         {
           "PointsYes": 5,
@@ -459,7 +459,7 @@
     },
     {
       "Content": "Tu vois un billet de 10€ derrière les fleurs, tu marches dessus pour le prendre?",
-      "Categroy": "Biodiversity",
+      "Category": "Biodiversity",
       "Impacts": [
         {
           "PointsYes": -5,
@@ -480,7 +480,7 @@
     },
     {
       "Content": "Tu quittes une pièce en sachant que tu y retourneras dans 10 minutes. Tu éteins la lumière?",
-      "Categroy": "Biodiversity",
+      "Category": "Biodiversity",
       "Impacts": [
         {
           "PointsYes": 0,
@@ -501,7 +501,7 @@
     },
     {
       "Content": "Le produit que tu veux est plus cher emballé qu'en vrac, tu le prends?",
-      "Categroy": "Biodiversity",
+      "Category": "Biodiversity",
       "Impacts": [
         {
           "PointsYes": -5,
@@ -522,7 +522,7 @@
     },
     {
       "Content": "Des trottinettes électriques débarquent. Un bon moyen d'aller au boulot comparé à la marche?",
-      "Categroy": "Transport",
+      "Category": "Transport",
       "Impacts": [
         {
           "PointsYes": -5,
@@ -543,7 +543,7 @@
     },
     {
       "Content": "Des trottinettes électriques débarquent. Un bon moyen d'aller au boulot comparé à la marche?",
-      "Categroy": "Transport",
+      "Category": "Transport",
       "Impacts": [
         {
           "PointsYes": -5,
