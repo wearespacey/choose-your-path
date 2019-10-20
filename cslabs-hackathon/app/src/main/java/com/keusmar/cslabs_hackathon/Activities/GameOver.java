@@ -19,7 +19,7 @@ public class GameOver extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(GameOver.this, RecapActivity.class);
+                Intent intent = new Intent(GameOver.this, MoralActivity.class);
                 startActivity(intent);
             }
         });
